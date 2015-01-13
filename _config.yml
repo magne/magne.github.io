@@ -14,7 +14,13 @@ github_username:  jekyll
 markdown: kramdown
 
 exclude:
-  - CNAME
   - README.md
+  - CNAME
   - Gemfile
   - Gemfile.lock
+  - bower.json
+  - bower_components
+  - gulpfile.js
+  - lib
+  - node_modules
+  - package.json
