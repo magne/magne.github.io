@@ -1,0 +1,2 @@
+# magne
+Personal blog
