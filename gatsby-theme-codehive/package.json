@@ -1,0 +1,12 @@
+{
+  "name": "gatsby-theme-codehive",
+  "version": "1.0.0",
+  "main": "gatsby-config.js",
+  "author": "Magne Rasmussen <magne.rasmussen@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "gatsby": "^2.19.29",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  }
+}
