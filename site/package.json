@@ -13,5 +13,8 @@
     "gatsby-theme-codehive": "1.0.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
+  },
+  "devDependencies": {
+    "gatsby-cli": "^2.10.2"
   }
 }

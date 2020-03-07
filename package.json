@@ -5,7 +5,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "yarn workspace site build"
+    "build": "yarn workspace site build",
+    "develop": "yarn workspace site develop"
   },
   "workspaces": [
     "gatsby-theme-codehive",
