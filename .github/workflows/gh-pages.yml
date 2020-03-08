@@ -27,7 +27,11 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - run: yarn install
-      - run: yarn build
+
+      - name: Build
+        run: yarn build
+        env:
+          GA_TRACKING_ID: "UA-16410274-1"
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
