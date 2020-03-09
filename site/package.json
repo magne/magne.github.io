@@ -16,6 +16,7 @@
     "gatsby-plugin-typography": "^2.3.23",
     "gatsby-source-filesystem": "^2.1.50",
     "gatsby-theme-codehive": "1.0.0",
+    "gatsby-transformer-remark": "^2.6.55",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-typography": "^0.16.19",
