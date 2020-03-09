@@ -9,6 +9,12 @@ module.exports = {
       options: {
         trackingId: `${process.env.GA_TRACKING_ID}`
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
   ]
 }
