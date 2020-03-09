@@ -9,6 +9,7 @@ module.exports = {
       options: {
         trackingId: `${process.env.GA_TRACKING_ID}`
       }
-    }
+    },
+    `gatsby-plugin-typescript`,
   ]
 }

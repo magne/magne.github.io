@@ -6,7 +6,9 @@
   "license": "MIT",
   "scripts": {
     "build": "yarn workspace site build",
-    "develop": "yarn workspace site develop"
+    "develop": "yarn workspace site develop",
+    "lint": "yarn workspace gatsby-theme-codehive lint && yarn workspace site lint",
+    "type-check": "tsc --noEmit"
   },
   "workspaces": [
     "gatsby-theme-codehive",
