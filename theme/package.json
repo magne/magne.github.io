@@ -15,19 +15,31 @@
     "react-dom": "^16.13.0"
   },
   "dependencies": {
-    "gatsby-plugin-typescript": "^2.2.2"
+    "gatsby-image": "^2.2.43",
+    "gatsby-plugin-sharp": "^2.4.8",
+    "gatsby-plugin-typescript": "^2.2.2",
+    "gatsby-remark-autolink-headers": "^2.1.25",
+    "gatsby-remark-images": "^3.1.47",
+    "gatsby-source-filesystem": "^2.1.51",
+    "gatsby-transformer-remark": "^2.6.56",
+    "gatsby-transformer-sharp": "^2.3.17",
+    "gatsby-transformer-yaml": "^2.2.26",
+    "typescript": "^3.8.3"
   },
   "devDependencies": {
+    "@hot-loader/react-dom": "^16.12.0",
     "@types/node": "^13.9.0",
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
+    "gatsby": "^2.19.29",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
     "stylelint": "^13.2.1",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.10.0",
     "tslint": "^6.0.0",
     "tslint-react": "^4.2.0",
-    "tslint-react-hooks": "^2.2.1",
-    "typescript": "^3.8.3"
+    "tslint-react-hooks": "^2.2.1"
   }
 }
