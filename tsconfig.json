@@ -23,7 +23,7 @@
     "allowSyntheticDefaultImports": true
   },
   "include": [
-    "./gatsby-theme-codehive/src/**/*",
+    "./theme/src/**/*",
     "./site/src/**/*"
   ]
 }

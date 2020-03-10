@@ -11,7 +11,7 @@
     "type-check": "tsc --noEmit"
   },
   "workspaces": [
-    "gatsby-theme-codehive",
+    "theme",
     "site"
   ]
 }
