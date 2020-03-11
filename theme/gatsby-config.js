@@ -53,6 +53,7 @@ module.exports = (themeOptions) => {
     plugins: [
       'gatsby-plugin-typescript',
       'gatsby-plugin-sharp',
+      'gatsby-plugin-styled-components',
       'gatsby-transformer-sharp',
       {
         resolve: 'gatsby-source-filesystem',
