@@ -7,6 +7,7 @@
   "scripts": {
     "build": "yarn workspace site build",
     "develop": "yarn workspace site develop",
+    "clean": "yarn workspace gatsby-theme-codehive clean && yarn workspace site clean",
     "lint": "yarn workspace gatsby-theme-codehive lint && yarn workspace site lint",
     "type-check": "tsc --noEmit"
   },

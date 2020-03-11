@@ -7,6 +7,7 @@
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build",
+    "clean": "gatsby clean",
     "lint:ts": "tslint -c ../tslint.json 'site/src/**/*.{ts,tsx}'",
     "lint:css": "stylelint --config ../.stylelintrc './src/**/*.{ts,tsx}'",
     "lint": "yarn run lint:ts && yarn run lint:css"

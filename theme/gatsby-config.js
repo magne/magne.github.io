@@ -52,9 +52,9 @@ module.exports = (themeOptions) => {
     },
     plugins: [
       'gatsby-plugin-typescript',
-      'gatsby-plugin-sharp',
-      'gatsby-plugin-styled-components',
       'gatsby-transformer-sharp',
+      'gatsby-plugin-styled-components',
+      'gatsby-plugin-sharp',
       {
         resolve: 'gatsby-source-filesystem',
         options: {
@@ -73,6 +73,7 @@ module.exports = (themeOptions) => {
         options: {
           plugins: [
             'gatsby-remark-autolink-headers',
+            'gatsby-remark-prismjs',
             {
               resolve: 'gatsby-remark-images',
               options: {
@@ -82,6 +83,6 @@ module.exports = (themeOptions) => {
           ]
         }
       },
-    ]
+    ].filter(Boolean)
   };
 };

@@ -11,11 +11,7 @@ export const Container = styled.div`
   }
 `;
 
-interface GridProps {
-  columns?: number
-}
-
-export const Grid = styled(Container)<GridProps>`
+export const Grid = styled(Container)<{ columns?: number }>`
   display: grid;
   grid-template-columns: repeat(${props => props.columns ? props.columns : 3}, 1fr);
   grid-gap: 30px;

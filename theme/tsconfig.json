@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "sourceMap": true,
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "target": "ESNext",
+    "jsx": "react",
+    "lib": ["DOM", "ES2015", "ES2017"],
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./@types"
+    ],
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ]
+  },
+  "include": [
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "./@types"
+  ],
+  "exclude": [
+    "/node_modules/"
+  ]
+}
