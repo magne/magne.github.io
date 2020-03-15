@@ -1,4 +1,7 @@
 .cache/
 public/
 node_modules/
+__generated__/
+apollo.config.js
+schema.json
 yarn-error.log

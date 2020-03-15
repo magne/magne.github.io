@@ -19,11 +19,14 @@
     "@types/react-dom": "^16.9.5",
     "@typescript-eslint/eslint-plugin": "^2.23.0",
     "@typescript-eslint/parser": "^2.23.0",
+    "babel-plugin-styled-components": "^1.10.7",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
     "gatsby": "^2.19.43",
     "gatsby-cli": "^2.10.10",
+    "gatsby-plugin-codegen": "^1.0.14",
+    "gatsby-plugin-styled-components": "^3.1.20",
     "gatsby-plugin-typescript": "^2.2.3",
     "gatsby-source-filesystem": "^2.1.53",
     "gatsby-transformer-yaml": "^2.2.26",
@@ -31,6 +34,7 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "source-map-support": "^0.5.16",
+    "styled-components": "^5.0.1",
     "ts-node": "^8.6.2",
     "typescript": "^3.8.3"
   }
