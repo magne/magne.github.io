@@ -5329,6 +5329,13 @@ gatsby-plugin-codegen@^1.0.14:
     lodash.mergewith "^4.6.2"
     serialize-javascript "^2.1.1"
 
+gatsby-plugin-google-analytics@^2.1.37:
+  version "2.1.37"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.1.37.tgz#7b70a67a5c0e73289f3e9bd7b7e8221ff2d5f2b3"
+  integrity sha512-x63KAcF7foLWX4HDIMsLhtQV12iJ1DsoSbEU6gqInXMBI34PVszd4PlcefJUqc5ePqTR1lZ5TFAHse5vOSb4fQ==
+  dependencies:
+    "@babel/runtime" "^7.7.6"
+
 gatsby-plugin-page-creator@^2.1.45:
   version "2.1.45"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-2.1.45.tgz#1fbade460e6c68798e66efcb4527ff9967c3c7cf"
