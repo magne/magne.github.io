@@ -5,7 +5,8 @@
     "clean": "yarn workspace theme clean && yarn workspace site clean",
     "serve": "yarn workspace site serve",
     "develop": "yarn workspace site develop",
-    "eslint": "eslint ."
+    "lint": "eslint .",
+    "type-check": "yarn workspace theme type-check"
   },
   "workspaces": [
     "site",
