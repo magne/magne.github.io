@@ -1,12 +1,16 @@
 import { existsSync, mkdirSync } from 'fs';
 import { GatsbyNode } from 'gatsby';
+import * as path from 'path';
 import { IThemeOptions } from '../model';
 
-export const onPreBootstrap: GatsbyNode['onPreBootstrap'] = async ({ reporter }, themeOptions: IThemeOptions) => {
-  const contentPath: string = themeOptions?.contentPath || 'data';
+export const onPreBootstrap: GatsbyNode['onPreBootstrap'] = async ({ store, reporter }, themeOptions: IThemeOptions) => {
+  const { program } = store.getState();
 
-  if (!existsSync(contentPath)) {
+  const contentPath = themeOptions.contentPath || 'content';
+  const dir = path.join(program.directory, contentPath);
+
+  if (!existsSync(dir)) {
     reporter.info(`creating the ${contentPath} directory`);
-    mkdirSync(contentPath);
+    mkdirSync(dir);
   }
 };
