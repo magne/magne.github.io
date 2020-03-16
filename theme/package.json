@@ -23,6 +23,7 @@
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
     "gatsby": "^2.19.43",
     "gatsby-cli": "^2.10.10",
     "gatsby-plugin-codegen": "^1.0.14",
