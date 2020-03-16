@@ -1,35 +1,32 @@
 import React, { FC } from 'react';
-import { IPost } from '../gatsby/create-pages';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import { IPost } from '../utils/models';
 
 interface ITemplateProps {
-  pageContext: {
+  pathContext: {
     posts: IPost[];
     postsPerPage: number;
   };
+  location: Location;
 }
 
-const PostsTemplate: FC<ITemplateProps> = ({ pageContext }) => {
-  console.log(pageContext.posts);
+const PostsTemplate: FC<ITemplateProps> = ({ pathContext, location }) => {
+  const posts = pathContext.posts.slice(0, pathContext.postsPerPage);
+
   return (
-    <div>
-      <h1>My Theme Site!</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>title</th>
-            <th>path</th>
-          </tr>
-        </thead>
-        <tbody>
-          {pageContext.posts?.map(page => (
-            <tr key={page.id}>
-              <td>{page.frontmatter?.title}</td>
-              <td>{page.frontmatter?.path}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <Layout>
+      <SEO location={location} type={'WebSite'} />
+      <div>
+        {pathContext.postsPerPage}
+        {posts.map(page => (
+          <div key={page.frontmatter.path}>
+            <div>{page.frontmatter?.title}</div>
+            <div>{page.frontmatter?.path}</div>
+          </div>
+        ))}
+      </div>
+    </Layout>
   );
 };
 
