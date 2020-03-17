@@ -54,6 +54,13 @@ export default ({ contentPath = 'content' }): {} => ({
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `themeAssets`,
+        path: `${__dirname}/assets`,
+      },
+    },
+    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
