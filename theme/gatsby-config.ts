@@ -61,6 +61,32 @@ export default ({ contentPath = 'content' }): {} => ({
       },
     },
     {
+      resolve: `gatsby-plugin-lunr`,
+      options: {
+        languages: [
+          {
+            name: 'en',
+          },
+        ],
+        fields: [
+          { name: 'title', store: true, attributes: { boost: 20 } },
+          { name: 'content', store: true },
+          { name: 'tags', store: true },
+          { name: 'excerpt', store: true },
+          { name: 'path', store: true },
+        ],
+        resolvers: {
+          MarkdownRemark: {
+            title: node => node.frontmatter.title,
+            content: node => node.html,
+            tags: node => node.frontmatter.tags,
+            excerpt: node => node.frontmatter.excerpt,
+            path: node => node.frontmatter.path,
+          },
+        },
+      },
+    },
+    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
