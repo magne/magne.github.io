@@ -14,7 +14,7 @@ interface ILayoutProps {
 
 const Layout: FunctionComponent<ILayoutProps> = ({ children, bigHeader = true }) => {
   const data = useStaticQuery<ISiteMetadata>(graphql`
-    query {
+    query SiteMetadata {
       site {
         siteMetadata {
           title
