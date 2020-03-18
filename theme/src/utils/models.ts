@@ -33,6 +33,7 @@ export interface ISocialChannels {
 }
 
 export interface IPost {
+  id: number;
   frontmatter: {
     title: string;
     path: string;

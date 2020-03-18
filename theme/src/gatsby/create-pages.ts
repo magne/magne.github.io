@@ -1,38 +1,17 @@
 import { GatsbyNode } from 'gatsby';
 import { IThemeOptions } from '../model';
-
-export interface IPost {
-  id: string;
-  headings?: {
-    depth?: number;
-  };
-  frontmatter?: {
-    title?: string;
-    path?: string;
-    tags?: (string | null)[];
-    excerpt?: string;
-    create?: Date;
-    createdPretty?: string;
-    updated?: Date;
-    updatedPretty?: string;
-    featuredImage?: {
-      childImageSharp?: {
-        sizes?: {
-          base64?: string;
-          aspectRatio: number;
-          src: string;
-          srcSet: string;
-          sizes: string;
-        };
-      };
-    };
-  };
-  html?: string;
-}
+import { ITag, IPage, IPost } from '../utils/models';
+import slugify from 'slugify';
 
 interface IQueryResult {
+  pages: {
+    edges: { node: IPage }[];
+  };
   posts: {
     edges: { node: IPost }[];
+  };
+  tags: {
+    edges: { node: ITag }[];
   };
 }
 
@@ -101,7 +80,52 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
     reporter.panic(result.errors);
   }
 
-  const posts = result.data?.posts.edges.map(node => node.node) ?? null;
+  const tags: string[] = [];
+  const posts = result.data?.posts.edges.map(node => node.node);
+  const pages = result.data?.pages.edges.map(node => node.node);
+  const availableTags = result.data?.tags.edges.map(node => node.node).map(t => t.name) || [];
+
+  // Create a route for every single post (located in 'content/posts')
+  posts?.forEach(post => {
+    if (post.frontmatter.tags) {
+      tags.push(...post.frontmatter.tags);
+    }
+    const primaryTag = post.frontmatter.tags.length > 0 ? post.frontmatter.tags[0] : null;
+    actions.createPage({
+      path: post.frontmatter.path,
+      component: require.resolve('../templates/post.tsx'),
+      context: {
+        postId: post.id,
+        primaryTag: primaryTag,
+      },
+    });
+  });
+
+  // Create a route for every page (located in 'content/pages')
+  pages?.forEach(page => {
+    actions.createPage({
+      path: page.frontmatter.path,
+      component: require.resolve('../templates/page.tsx'),
+      context: {
+        page,
+      },
+    });
+  });
+
+  // Create a route for every tag (from 'content/tags.yml' and the tags found in posts)
+  // TODO: [...new Set(tags)].concat(availableTags).forEach(tag => {
+  Array.from(new Set(tags))
+    .concat(availableTags)
+    .forEach(tag => {
+      const slugified = slugify(tag, { lower: true });
+      actions.createPage({
+        path: `/tag/${slugified}`,
+        component: require.resolve('../templates/tag.tsx'),
+        context: {
+          tag,
+        },
+      });
+    });
 
   // The index page
   actions.createPage({

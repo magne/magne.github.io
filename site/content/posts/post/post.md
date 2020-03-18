@@ -9,7 +9,7 @@ updated: 2019-07-30
 ---
 This is a sample post:
 
-```C#
+```csharp
 
 class Test {
   private void func() {
