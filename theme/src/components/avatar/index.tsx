@@ -18,7 +18,7 @@ const StyledAvatar = styled(Img)<IAvatarProps>`
  */
 const Avatar: FunctionComponent<IAvatarProps> = ({ alt, style }) => {
   const logo = useStaticQuery(graphql`
-    query {
+    query Avatar {
       file(sourceInstanceName: { eq: "themeAssets" }, name: { eq: "nehalist-gatsby" }) {
         childImageSharp {
           fixed(width: 55, height: 55) {

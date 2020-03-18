@@ -116,6 +116,8 @@ export default ({ contentPath = 'content' }): {} => ({
           './node_modules/theme/src/**/*.tsx',
           '../node_modules/theme/src/**/*.ts',
           '../node_modules/theme/src/**/*.tsx',
+          './node_modules/gatsby-*/**/*.js',
+          '../node_modules/gatsby-*/**/*.js',
         ],
       },
     },
