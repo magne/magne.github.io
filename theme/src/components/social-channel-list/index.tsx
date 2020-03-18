@@ -46,14 +46,14 @@ const StyledSocialChannel = styled.li`
   }
 `;
 
-const SocialChannelList: FunctionComponent<SocialChannelListProps> = ({ channels }) => (
+const SocialChannelList: FunctionComponent<ISocialChannelListProps> = ({ channels }) => (
   <StyledSocialChannels>
     {Object.keys(channels)
       .filter(c => channels[c] !== '')
       .map((channel, index) => (
         <StyledSocialChannel key={index}>
           <a href={channels[channel]} target={`_blank`} rel={`noopener`} aria-label={channel}>
-            {createSocialIcon(channel as keyof SocialChannels)}
+            {createSocialIcon(channel as keyof ISocialChannels)}
           </a>
         </StyledSocialChannel>
       ))}
