@@ -1,4 +1,4 @@
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';

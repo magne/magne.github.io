@@ -1,7 +1,7 @@
-import React, { CSSProperties, FunctionComponent } from 'react';
-import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
+import React, { CSSProperties, FunctionComponent } from 'react';
+import styled from 'styled-components';
 
 interface IAvatarProps {
   alt: string;

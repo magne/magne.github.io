@@ -1,8 +1,8 @@
+import { navigate } from 'gatsby';
 import React, { FunctionComponent, useEffect, useRef, useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { NavMenuItem, ToggleSearchButton } from '../navigation/style';
-import { SearchBox, ResultTitle, ResultsTitle, SearchResults, SearchResult, ResultLink, SearchInput } from './style';
-import { navigate } from 'gatsby';
+import { ResultLink, ResultsTitle, ResultTitle, SearchBox, SearchInput, SearchResult, SearchResults } from './style';
 
 interface ISearchResult {
   title: string;

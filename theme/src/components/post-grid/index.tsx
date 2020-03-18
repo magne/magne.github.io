@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { IPost } from '../../utils/models';
-import { Grid } from '../common';
 import { Card } from '../card';
+import { Grid } from '../common';
 
 interface IPostGridProps {
   posts: IPost[];

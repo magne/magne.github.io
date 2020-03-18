@@ -1,8 +1,8 @@
+import { graphql, useStaticQuery } from 'gatsby';
 import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
-import { useStaticQuery, graphql } from 'gatsby';
-import { Card } from '../card';
 import Theme from '../../styles/theme';
+import { Card } from '../card';
 
 const LatestPosts = styled.div`
   display: grid;

@@ -1,5 +1,5 @@
 import { GatsbyNode } from 'gatsby';
-import { IThemeOptions } from '../model';
+import { IThemeOptions } from '../utils/models';
 import { ITag, IPage, IPost } from '../utils/models';
 import slugify from 'slugify';
 

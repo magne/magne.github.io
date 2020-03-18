@@ -1,20 +1,17 @@
-import React, { FunctionComponent, createRef, useState } from 'react';
-import { IPost, ITag } from '../utils/models';
-import styled from 'styled-components';
-import Layout from '../components/layout';
-import { Container, Grid } from '../components/common';
-import { Card } from '../components/card';
-import TagList from '../components/tag-list';
-import { Link, graphql } from 'gatsby';
-import SidebarContent from '../components/sidebar-content';
-import SEO from '../components/seo';
-import Theme from '../styles/theme';
+import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
-import ReadingProgress from '../components/reading-progress';
-import { FaTimes, FaAlignJustify } from 'react-icons/fa';
-import Toc from '../components/toc';
+import React, { createRef, FunctionComponent, useState } from 'react';
+import { FaAlignJustify, FaTimes } from 'react-icons/fa';
 import slugify from 'slugify';
+import styled from 'styled-components';
 import Bio from '../components/bio';
+import { Container } from '../components/common';
+import Layout from '../components/layout';
+import ReadingProgress from '../components/reading-progress';
+import SEO from '../components/seo';
+import Toc from '../components/toc';
+import Theme from '../styles/theme';
+import { IPost, ITag } from '../utils/models';
 
 interface IPostTemplateProps {
   data: {

@@ -3,7 +3,7 @@ import Img from 'gatsby-image';
 import React, { FunctionComponent } from 'react';
 import slugify from 'slugify';
 import { ITag } from '../../utils/models';
-import { StyledTag, StyledTagList, TagContainer, TagIcon, TagListTitle, TagName, TagArchiveLink, TagArchiveLinkWrapper } from './style';
+import { StyledTag, StyledTagList, TagArchiveLink, TagArchiveLinkWrapper, TagContainer, TagIcon, TagListTitle, TagName } from './style';
 
 const TagList: FunctionComponent = () => {
   const tagsQuery = useStaticQuery<{ allTags: { nodes: ITag[] } }>(graphql`

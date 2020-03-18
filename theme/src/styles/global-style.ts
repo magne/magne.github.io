@@ -1,6 +1,6 @@
+import * as prismStyle from 'prismjs/themes/prism-okaidia.css';
 import { createGlobalStyle } from 'styled-components';
 import styledNormalize from 'styled-normalize';
-import * as prismStyle from 'prismjs/themes/prism-okaidia.css';
 import Theme from './theme';
 
 const GlobalStyle = createGlobalStyle`

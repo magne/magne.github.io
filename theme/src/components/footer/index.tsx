@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { IMenuItem } from '../../utils/models';
-import { StyledFooter, FooterMenuItem, FooterMenuLink, FooterContainer, StyledNav, Copyright, DesignBy } from './style';
+import { Copyright, DesignBy, FooterContainer, FooterMenuItem, FooterMenuLink, StyledFooter, StyledNav } from './style';
 
 interface IFooterProps {
   menu: IMenuItem[];

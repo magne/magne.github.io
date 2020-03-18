@@ -1,14 +1,14 @@
 import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import React, { FunctionComponent } from 'react';
 import slugify from 'slugify';
+import styled from 'styled-components';
 import { Card } from '../components/card';
 import { Grid } from '../components/common';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Subheader from '../components/subheader';
 import { ITag } from '../utils/models';
-import Img from 'gatsby-image';
-import styled from 'styled-components';
 
 interface ITagsPageProps {
   data: {

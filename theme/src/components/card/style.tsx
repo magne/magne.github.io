@@ -1,8 +1,8 @@
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
-import { ICardProps } from './index';
 import Theme from '../../styles/theme';
+import { ICardProps } from './index';
 
 type TStyledArticleProps = Pick<ICardProps, 'halfImage'>;
 type TCardContent = { compact: boolean };
@@ -38,23 +38,23 @@ export const FeaturedImage = styled(Img)<TStyledArticleProps>`
   ${props =>
     props.halfImage
       ? `
-  width: 50%;
-  float: left;
-  margin-right: 30px;
-  height: 320px;
-  border-bottom-left-radius: 3px;
-  @media (max-width: ${Theme.breakpoints.sm}) {
-    width: 100%;
-    float: none;
-    height: 190px;
-  }
-`
+          width: 50%;
+          float: left;
+          margin-right: 30px;
+          height: 320px;
+          border-bottom-left-radius: 3px;
+          @media (max-width: ${Theme.breakpoints.sm}) {
+            width: 100%;
+            float: none;
+            height: 190px;
+          }
+        `
       : `
-  height: 190px;
-  max-height: 190px;
-  width: 100%;
-  border-top-right-radius: 3px;
-`};
+          height: 190px;
+          max-height: 190px;
+          width: 100%;
+          border-top-right-radius: 3px;
+        `};
 `;
 
 export const CardContent = styled.section<TCardContent>`

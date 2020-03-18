@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
-import { ISocialChannels } from '../../utils/models';
-import styled from 'styled-components';
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaQuestionCircle, FaTwitch, FaTwitter, FaYoutube } from 'react-icons/fa';
+import styled from 'styled-components';
+import { ISocialChannels } from '../../utils/models';
 
 interface ISocialChannelListProps {
   channels: ISocialChannels;

@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import React, { FunctionComponent, useEffect } from 'react';
+import styled from 'styled-components';
 import tocbot from 'tocbot';
 
 interface ITocProps {

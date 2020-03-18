@@ -1,9 +1,9 @@
+import { graphql, useStaticQuery } from 'gatsby';
 import React, { CSSProperties, FunctionComponent } from 'react';
 import styled from 'styled-components';
-import { graphql, useStaticQuery } from 'gatsby';
 import { ISiteMetadata } from '../../utils/models';
-import SocialChannelList from '../social-channel-list';
 import Avatar from '../avatar';
+import SocialChannelList from '../social-channel-list';
 
 interface IBioProps {
   textAlign: 'left' | 'center' | 'right' | 'justify';

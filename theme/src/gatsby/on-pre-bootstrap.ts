@@ -1,7 +1,7 @@
 import { existsSync, mkdirSync } from 'fs';
 import { GatsbyNode } from 'gatsby';
 import * as path from 'path';
-import { IThemeOptions } from '../model';
+import { IThemeOptions } from '../utils/models';
 
 export const onPreBootstrap: GatsbyNode['onPreBootstrap'] = async ({ store, reporter }, themeOptions: IThemeOptions) => {
   const { program } = store.getState();

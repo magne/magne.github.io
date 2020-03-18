@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import Typed from 'react-typed';
+import styled from 'styled-components';
 import Theme from '../../styles/theme';
 
 export const StyledHeader = styled.header`

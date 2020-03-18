@@ -1,9 +1,9 @@
-import React, { FunctionComponent } from 'react';
-import Layout from '../components/layout';
 import { Link } from 'gatsby';
+import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
-import Theme from '../styles/theme';
+import Layout from '../components/layout';
 import SEO from '../components/seo';
+import Theme from '../styles/theme';
 
 interface IErrorProps {
   location: Location;

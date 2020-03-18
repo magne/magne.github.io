@@ -1,8 +1,8 @@
+import { graphql, useStaticQuery } from 'gatsby';
 import React, { FunctionComponent } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import { ISiteMetadata } from '../../utils/models';
 import Helmet from 'react-helmet';
 import url from 'url';
+import { ISiteMetadata } from '../../utils/models';
 
 interface ISEOProps {
   title?: string;

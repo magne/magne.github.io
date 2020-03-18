@@ -1,10 +1,9 @@
-import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { FunctionComponent, ReactNode } from 'react';
-import { ISiteMetadata } from '../utils/models';
+import React, { FunctionComponent, ReactNode } from 'react';
 import GlobalStyle from '../styles/global-style';
-import Header from './header';
+import { ISiteMetadata } from '../utils/models';
 import Footer from './footer';
+import Header from './header';
 import Navigation from './navigation';
 
 interface ILayoutProps {

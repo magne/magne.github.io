@@ -1,4 +1,4 @@
-import { IThemeOptions } from './src/model';
+import { IThemeOptions } from './src/utils/models';
 
 export default (themeOptions: IThemeOptions): {} => {
   const loadDefaultPages = themeOptions.loadDefaultPages !== undefined ? themeOptions.loadDefaultPages : true;
