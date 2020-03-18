@@ -1,7 +1,7 @@
 export default ({ contentPath = 'content' }): {} => ({
   siteMetadata: {
     title: `nehalem`,
-    siteUrl: `https://nehalem.netlify.com`,
+    siteUrl: `https://blog.codehive.org`,
     description: `A Gatsby theme for %TOPICS%`,
     topics: [`bloggers`, `geeks`, `nerds`, `people`, `everyone`],
     menu: [
@@ -47,6 +47,7 @@ export default ({ contentPath = 'content' }): {} => ({
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
