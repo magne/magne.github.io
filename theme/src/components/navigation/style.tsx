@@ -3,10 +3,7 @@ import styled from 'styled-components';
 import Theme from '../../styles/theme';
 import { Container } from '../common';
 
-type INavContainerProps = { dark?: boolean };
-type INavMenuProps = { mobile?: boolean };
-
-export const NavContainer = styled.div<INavContainerProps>`
+export const NavContainer = styled.div<{ dark?: boolean }>`
   z-index: 1000;
   ${props =>
     props.dark &&
@@ -34,7 +31,7 @@ export const NavWrapper = styled.div`
   }
 `;
 
-export const NavMenu = styled.ul<INavMenuProps>`
+export const NavMenu = styled.ul<{ mobile?: boolean }>`
   align-self: center;
   list-style-type: none;
   margin: 0;

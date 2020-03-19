@@ -2,10 +2,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import Theme from '../../styles/theme';
 
-type SearchBoxProps = { open: boolean };
-type SearchResultProps = { selected: boolean };
-
-export const SearchBox = styled.div<SearchBoxProps>`
+export const SearchBox = styled.div<{ readonly open: boolean }>`
   display: ${props => (props.open ? 'block' : 'none')};
   position: absolute;
   width: 400px;
@@ -60,7 +57,7 @@ export const SearchResults = styled.ul`
   white-space: pre-wrap;
 `;
 
-export const SearchResult = styled.li<SearchResultProps>`
+export const SearchResult = styled.li<{ selected: boolean }>`
   line-height: 1.4em;
   ${props =>
     props.selected &&

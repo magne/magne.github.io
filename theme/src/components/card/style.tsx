@@ -4,9 +4,6 @@ import styled from 'styled-components';
 import Theme from '../../styles/theme';
 import { ICardProps } from './index';
 
-type TStyledArticleProps = Pick<ICardProps, 'halfImage'>;
-type TCardContent = { compact: boolean };
-
 export const StyledCard = styled(Link)`
   display: block;
   background-color: #fff;
@@ -30,7 +27,7 @@ export const StyledArticle = styled.article`
   }
 `;
 
-export const FeaturedImage = styled(Img)<TStyledArticleProps>`
+export const FeaturedImage = styled(Img)<Pick<ICardProps, 'halfImage'>>`
   background-position: center;
   background-size: cover;
   max-width: 100%;
@@ -57,7 +54,7 @@ export const FeaturedImage = styled(Img)<TStyledArticleProps>`
         `};
 `;
 
-export const CardContent = styled.section<TCardContent>`
+export const CardContent = styled.section<{ compact: boolean }>`
   padding: ${(props): string => (props.compact ? '10px' : '40px')};
 
   p {
