@@ -1,8 +1,9 @@
 import { graphql, Link, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
+import Img, { FixedObject } from 'gatsby-image';
 import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
 import Theme from '../../styles/theme';
+import { LogoQuery } from './__generated__/LogoQuery';
 
 interface ILogoProps {
   title: string;
@@ -23,8 +24,8 @@ const HomeLink = styled(Link)`
 `;
 
 const Logo: FunctionComponent<ILogoProps> = ({ title }) => {
-  const logo = useStaticQuery(graphql`
-    query Logo {
+  const logo = useStaticQuery<LogoQuery>(graphql`
+    query LogoQuery {
       file(sourceInstanceName: { eq: "themeAssets" }, name: { eq: "nehalist-gatsby" }) {
         childImageSharp {
           fixed(width: 30, height: 30) {
@@ -35,11 +36,12 @@ const Logo: FunctionComponent<ILogoProps> = ({ title }) => {
     }
   `);
 
-  return (
+  const fixed = logo?.file?.childImageSharp?.fixed as FixedObject | FixedObject[] | undefined;
+  return fixed ? (
     <HomeLink to={`/`}>
-      <LogoImage fixed={logo.file.childImageSharp.fixed} alt={title} />
+      <LogoImage fixed={fixed} alt={title} />
     </HomeLink>
-  );
+  ) : null;
 };
 
 export default Logo;
