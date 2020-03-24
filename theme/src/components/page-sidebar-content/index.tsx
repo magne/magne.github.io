@@ -10,7 +10,7 @@ const LatestPosts = styled.div`
   grid-gap: 30px;
   width: 310px;
 
-  @media (max-width: ${Theme.breakpoints.md}) {
+  @media ${Theme.media.md} {
     grid-template-columns: 1fr 1fr;
   }
 

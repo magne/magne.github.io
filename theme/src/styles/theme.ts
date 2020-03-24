@@ -1,18 +1,13 @@
 import { IDefaultTheme } from './default-theme';
+import { colors, media } from '../tokens';
 
 const Theme: IDefaultTheme = {
   layout: {
-    backgroundColor: '#fafafa',
-    primaryColor: '#a4cbb8',
-    linkColor: '#a4cbb8',
+    backgroundColor: colors.background,
+    primaryColor: colors.grayishCyan,
+    linkColor: colors.grayishCyan,
   },
-  breakpoints: {
-    xs: '425px',
-    sm: '576px',
-    md: '768px',
-    lg: '992px',
-    xl: '1300px',
-  },
+  media: media,
   fonts: {
     base: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
   },
@@ -22,7 +17,7 @@ const Theme: IDefaultTheme = {
     },
     header: {
       height: '400px',
-      background: 'linear-gradient(-45deg, #44596e, #a4cbb8) repeat scroll 0 0 transparent',
+      background: `linear-gradient(-45deg, ${colors.veryDarkDesaturatedBlue}, ${colors.grayishCyan}) repeat scroll 0 0 transparent`,
     },
   },
 };

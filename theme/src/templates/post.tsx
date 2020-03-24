@@ -12,6 +12,7 @@ import SEO from '../components/seo';
 import Toc from '../components/toc';
 import Theme from '../styles/theme';
 import { IPost, ITag } from '../utils/models';
+import { colors } from '../tokens';
 
 interface IPostTemplateProps {
   data: {
@@ -32,11 +33,11 @@ const LeftSidebar = styled.div<{ show?: boolean }>`
   max-width: 225px;
   transition: opacity 0.5s, z-index 0.5s;
 
-  @media (max-width: ${Theme.breakpoints.xl}) {
+  @media ${Theme.media.xl} {
     position: fixed;
     opacity: ${props => (props.show ? 1 : 0)};
     z-index: ${props => (props.show ? 1000 : -1)};
-    background-color: #fff;
+    background-color: ${colors.white};
     width: 100% !important;
     max-width: 100%;
     padding: 0 20px;
@@ -47,9 +48,9 @@ const LeftSidebar = styled.div<{ show?: boolean }>`
 
 const PostContent = styled.div`
   margin-top: -5px;
-  border-right: 1px #e5eff5 solid;
-  border-left: 1px #e5eff5 solid;
-  background-color: #fff;
+  border-right: 1px ${colors.lightGreyishBlue} solid;
+  border-left: 1px ${colors.lightGreyishBlue} solid;
+  background-color: ${colors.white};
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.03), 0 3px 46px rgba(0, 0, 0, 0.1);
   z-index: 10;
   width: 1035px;
@@ -81,7 +82,7 @@ const PostContent = styled.div`
     visibility: hidden;
   }
   h2 {
-    border-top: 1px solid #ececec;
+    border-top: 1px solid ${colors.veryLightGrey2};
     margin-top: 44px;
     padding-top: 40px;
     line-height: 1.2;
@@ -95,7 +96,7 @@ const PostContent = styled.div`
     margin: 30px 0;
   }
   hr {
-    border-top: 1px solid #ececec;
+    border-top: 1px solid ${colors.veryLightGrey2};
     border-bottom: 0;
     margin-top: 44px;
     margin-bottom: 40px;
@@ -118,14 +119,14 @@ const TocWrapper = styled.div`
 const PostHeader = styled.header`
   padding: 40px;
 
-  @media (max-width: ${Theme.breakpoints.sm}) {
+  @media ${Theme.media.sm} {
     padding: 20px;
   }
 `;
 
 const FeaturedImage = styled(Img)`
   border-radius: 0;
-  @media (max-width: ${Theme.breakpoints.xl}) {
+  @media ${Theme.media.xl} {
     margin-left: -1px;
     margin-right: -1px;
   }
@@ -133,7 +134,7 @@ const FeaturedImage = styled(Img)`
 
 const StyledPost = styled.section`
   padding: 40px;
-  @media (max-width: ${Theme.breakpoints.sm}) {
+  @media ${Theme.media.sm} {
     padding: 20px;
   }
 `;
@@ -151,7 +152,7 @@ const PostTitle = styled.h1`
 `;
 
 const PostFooter = styled.footer`
-  background-color: #fafafa;
+  background-color: ${colors.mostlyWhite};
   font-size: 0.8em;
   color: #666;
   padding: 40px;
@@ -162,15 +163,15 @@ const PostFooter = styled.footer`
 `;
 
 const FooterTagLink = styled(Link)`
-  color: #000 !important;
+  color: ${colors.black} !important;
   text-decoration: none;
   border-bottom: 0 !important;
 `;
 
 const PostAddition = styled.section`
-  background-color: #fff;
-  border-top: 1px #e5eff5 solid;
-  border-bottom: 1px #e5eff5 solid;
+  background-color: ${colors.white};
+  border-top: 1px ${colors.lightGreyishBlue} solid;
+  border-bottom: 1px ${colors.lightGreyishBlue} solid;
   z-index: 700;
   position: relative;
   padding: 40px;
@@ -184,7 +185,7 @@ const PostAdditionContent = styled(Container)`
 const BioWrapper = styled.div`
   width: 50%;
   margin: auto;
-  @media (max-width: ${Theme.breakpoints.sm}) {
+  @media ${Theme.media.sm} {
     width: 100%;
   }
 `;
@@ -201,10 +202,10 @@ const ToggleTocButton = styled.button`
   z-index: 5000;
   width: 50px;
   height: 50px;
-  background-color: #20232a;
-  color: #fff;
+  background-color: ${colors.veryDarkMostlyBlackBlue};
+  color: ${colors.white};
   outline: none;
-  @media (min-width: ${Theme.breakpoints.xl}) {
+  @media (min-width: ${Theme.media.xl}) {
     display: none;
   }
 `;

@@ -2,13 +2,14 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import Theme from '../../styles/theme';
 import { Container } from '../common';
+import { colors } from '../../tokens';
 
 export const NavContainer = styled.div<{ dark?: boolean }>`
   z-index: 1000;
   ${props =>
     props.dark &&
     `
-  background-color: #20232a;
+  background-color: ${colors.veryDarkMostlyBlackBlue};
   position: sticky;
   top: 0;
   box-shadow: 0 0 3px rgba(0,0,0,.03), 0 3px 46px rgba(0,0,0,.07);
@@ -26,7 +27,7 @@ export const NavWrapper = styled.div`
   width: 100%;
   height: 70px;
   white-space: nowrap;
-  @media (max-width: ${Theme.breakpoints.sm}) {
+  @media ${Theme.media.sm} {
     width: 90%;
   }
 `;
@@ -39,11 +40,11 @@ export const NavMenu = styled.ul<{ mobile?: boolean }>`
   ${props =>
     props.mobile &&
     `
-  @media (max-width: ${Theme.breakpoints.sm}) {
+  @media ${Theme.media.sm} {
     width: 80%;
     overflow-x: auto;
     overflow-y: hidden;
-    mask-image: linear-gradient(to right, transparent, #000 25px, #000 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, ${colors.black} 25px, ${colors.black} 90%, transparent);
   }
 `}
 `;
@@ -58,7 +59,7 @@ export const NavMenuItem = styled.li`
 `;
 
 export const NavLink = styled(Link)`
-  color: #fff;
+  color: ${colors.white};
   opacity: 0.8;
   padding: 16px;
   transition: opacity 0.5s;
@@ -74,7 +75,7 @@ export const SearchContainer = styled.div`
 
 export const ToggleSearchButton = styled.button`
   cursor: pointer;
-  color: #fff;
+  color: ${colors.white};
   opacity: 0.8;
   background: none;
   outline: none;

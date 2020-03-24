@@ -1,12 +1,13 @@
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import Theme from '../../styles/theme';
+import { colors } from '../../tokens';
 
 export const SearchBox = styled.div<{ readonly open: boolean }>`
   display: ${props => (props.open ? 'block' : 'none')};
   position: absolute;
   width: 400px;
-  background-color: #fff;
+  background-color: ${colors.white};
   left: -338px;
   top: 40px;
   border-radius: 5px;
@@ -16,23 +17,23 @@ export const SearchBox = styled.div<{ readonly open: boolean }>`
     display: block;
     width: 16px;
     height: 16px;
-    background-color: #fff;
+    background-color: ${colors.white};
     position: absolute;
     top: -8px;
     right: 38px;
     transform: rotate(45deg);
-    @media (max-width: ${Theme.breakpoints.sm}) {
+    @media ${Theme.media.sm} {
       right: 17px;
     }
   }
-  @media (max-width: ${Theme.breakpoints.sm}) {
+  @media ${Theme.media.sm} {
     width: 300px;
     left: -260px;
   }
 `;
 
 export const SearchInput = styled.input`
-  background-color: #fff;
+  background-color: ${colors.white};
   display: block;
   width: 100%;
   border: 0;
@@ -43,9 +44,9 @@ export const SearchInput = styled.input`
 
 export const ResultsTitle = styled.h5`
   padding: 5px 15px;
-  background-color: #000;
+  background-color: ${colors.black};
   margin: 0;
-  color: #fff;
+  color: ${colors.white};
 `;
 
 export const SearchResults = styled.ul`
@@ -62,7 +63,7 @@ export const SearchResult = styled.li<{ selected: boolean }>`
   ${props =>
     props.selected &&
     `
-  background-color: #f2f2f2;
+  background-color: ${colors.veryLightGrey4};
 `};
 `;
 

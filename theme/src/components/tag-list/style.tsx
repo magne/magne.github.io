@@ -1,11 +1,12 @@
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import Theme from '../../styles/theme';
+import { colors } from '../../tokens';
 
 export const TagContainer = styled.section`
-  background-color: #fff;
-  border-top: 1px #e5eff5 solid;
-  border-bottom: 1px #e5eff5 solid;
+  background-color: ${colors.white};
+  border-top: 1px ${colors.lightGreyishBlue} solid;
+  border-bottom: 1px ${colors.lightGreyishBlue} solid;
   padding: 40px;
   margin-top: 75px;
   text-align: center;
@@ -22,7 +23,7 @@ export const StyledTagList = styled.ul`
   padding: 0;
   justify-content: center;
 
-  @media (max-width: ${Theme.breakpoints.sm}) {
+  @media ${Theme.media.sm} {
     flex-wrap: wrap;
     justify-content: flex-start;
   }
@@ -36,7 +37,7 @@ export const StyledTag = styled.li`
     transform: scale(1.04);
   }
 
-  @media (max-width: ${Theme.breakpoints.sm}) {
+  @media ${Theme.media.sm} {
     width: 50%;
     margin: 0 0 20px 0;
 

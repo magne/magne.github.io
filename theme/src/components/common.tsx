@@ -7,7 +7,7 @@ export const Container = styled.div`
   margin-right: auto;
   max-width: 100%;
 
-  @media (max-width: ${Theme.breakpoints.xl}) {
+  @media ${Theme.media.xl} {
     padding: 0 20px;
   }
 `;
@@ -21,7 +21,7 @@ export const Grid = styled(Container)<IGridProps>`
   grid-template-columns: repeat(${(props): number => (props.columns ? props.columns : 3)}, 1fr);
   grid-gap: 30px;
 
-  @media (max-width: ${Theme.breakpoints.sm}) {
+  @media ${Theme.media.sm} {
     grid-template-columns: 1fr;
     padding: 0 20px;
   }

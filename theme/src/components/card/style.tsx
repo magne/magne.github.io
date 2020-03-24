@@ -3,12 +3,13 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 import Theme from '../../styles/theme';
 import { ICardProps } from './index';
+import { colors } from '../../tokens';
 
 export const StyledCard = styled(Link)`
   display: block;
-  background-color: #fff;
+  background-color: ${colors.white};
   border-radius: 3px;
-  box-shadow: 0 1px 1px #e6e6e6, 0 2px 4px #e6e6e6;
+  box-shadow: 0 1px 1px ${colors.veryLightGrey}, 0 2px 4px ${colors.veryLightGrey};
   transition: 0.5s all;
   width: 100%;
   height: 100%;
@@ -22,7 +23,7 @@ export const StyledCard = styled(Link)`
 export const StyledArticle = styled.article`
   display: inline-block;
   width: 100%;
-  @media (max-width: ${Theme.breakpoints.sm}) {
+  @media ${Theme.media.sm} {
     grid-area: unset !important;
   }
 `;
@@ -40,7 +41,7 @@ export const FeaturedImage = styled(Img)<Pick<ICardProps, 'halfImage'>>`
           margin-right: 30px;
           height: 320px;
           border-bottom-left-radius: 3px;
-          @media (max-width: ${Theme.breakpoints.sm}) {
+          @media ${Theme.media.sm} {
             width: 100%;
             float: none;
             height: 190px;

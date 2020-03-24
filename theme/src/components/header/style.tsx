@@ -1,15 +1,16 @@
 import Typed from 'react-typed';
 import styled from 'styled-components';
 import Theme from '../../styles/theme';
+import { colors } from '../../tokens';
 
 export const StyledHeader = styled.header`
   display: flex;
   background: ${Theme.components.header.background};
   flex-direction: column;
   height: ${Theme.components.header.height};
-  border-bottom: 2px #ededed solid;
+  border-bottom: 2px ${colors.veryLightGrey3} solid;
 
-  @media (max-width: ${Theme.breakpoints.sm}) {
+  @media ${Theme.media.sm} {
     height: 30vh;
   }
 `;
@@ -21,7 +22,7 @@ export const TitleWrapper = styled.div`
   height: 100%;
   flex-direction: column;
 
-  @media (max-width: ${Theme.breakpoints.sm}) {
+  @media ${Theme.media.sm} {
     margin-top: -50px;
     font-size: 0.75em;
     margin-left: 10px;
@@ -32,7 +33,7 @@ export const TitleWrapper = styled.div`
 
 export const Title = styled.h1`
   display: block;
-  color: #fff;
+  color: ${colors.white};
   text-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
 `;
 
@@ -42,5 +43,5 @@ export const Description = styled.h2`
 `;
 
 export const StyledTopics = styled(Typed)`
-  border-bottom: 3px #000 solid;
+  border-bottom: 3px ${colors.black} solid;
 `;

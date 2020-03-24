@@ -2,6 +2,7 @@ import * as prismStyle from 'prismjs/themes/prism-okaidia.css';
 import { createGlobalStyle } from 'styled-components';
 import styledNormalize from 'styled-normalize';
 import Theme from './theme';
+import { colors } from '../tokens';
 
 const GlobalStyle = createGlobalStyle`
   ${styledNormalize}
@@ -26,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: #000;
+    color: ${colors.black};
     text-decoration: none;
   }
 
@@ -35,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .gatsby-highlight-code-line {
-    background-color: #353631;
+    background-color: ${colors.veryDarkGreyishYellow};
     display: block;
     margin-right: -1em;
     margin-left: -1em;

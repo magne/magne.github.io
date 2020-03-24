@@ -19,7 +19,7 @@ const PageContainer = styled(Container)`
   display: flex;
   justify-content: space-between;
 
-  @media (max-width: ${Theme.breakpoints.md}) {
+  @media ${Theme.media.md} {
     display: block;
   }
 
@@ -36,7 +36,7 @@ const PageContainer = styled(Container)`
 
 const PageSidebar = styled.aside`
   margin-left: 50px;
-  @media (max-width: ${Theme.breakpoints.md}) {
+  @media ${Theme.media.md} {
     margin-left: 0;
   }
 `;

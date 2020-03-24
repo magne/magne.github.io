@@ -13,7 +13,7 @@ const LogoImage = styled(Img)`
   max-height: 30px;
   width: 30px;
   margin-right: 45px;
-  @media (max-width: ${Theme.breakpoints.sm}) {
+  @media ${Theme.media.sm} {
     margin-right: 15px;
   }
 `;

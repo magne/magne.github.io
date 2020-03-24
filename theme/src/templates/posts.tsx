@@ -9,6 +9,7 @@ import SidebarContent from '../components/sidebar-content';
 import TagList from '../components/tag-list';
 import Theme from '../styles/theme';
 import { IPost } from '../utils/models';
+import { colors } from '../tokens';
 
 interface ITemplateProps {
   pathContext: {
@@ -23,7 +24,7 @@ const HomeContainer = styled(Container)`
   grid-template-columns: minmax(0, 1fr) 0.25fr;
   grid-column-gap: 30px;
 
-  @media (max-width: ${Theme.breakpoints.xl}) {
+  @media ${Theme.media.xl} {
     grid-template-columns: 1fr;
   }
 `;
@@ -37,7 +38,7 @@ const PostsContainer = styled(Grid)`
   margin-right: 0;
   margin-top: -30px;
 
-  @media (max-width: ${Theme.breakpoints.sm}) {
+  @media ${Theme.media.sm} {
     display: block;
     padding: 0;
 
@@ -51,9 +52,9 @@ const Sidebar = styled.aside`
   width: 315px;
   padding-top: 30px;
 
-  @media (max-width: ${Theme.breakpoints.xl}) {
+  @media ${Theme.media.xl} {
     margin: 30px auto;
-    border-top: 2px #e5eff5 solid;
+    border-top: 2px ${colors.lightGreyishBlue} solid;
     padding: 20px;
     width: 100%;
   }
@@ -69,10 +70,10 @@ const ArchiveLink = styled(Link)`
   padding: 10px;
   border-radius: 0.3em;
   transition: background-color 0.5s;
-  background-color: #f2f2f2;
+  background-color: ${colors.veryLightGrey4};
 
   &:hover {
-    background-color: #e6e6e6;
+    background-color: ${colors.veryLightGrey};
   }
 `;
 

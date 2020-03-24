@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
 import { Container } from '../common';
+import { colors } from '../../tokens';
 
 interface ISubheaderProps {
   title: string;
@@ -10,8 +11,8 @@ interface ISubheaderProps {
 }
 
 const StyledSubheader = styled.div<Pick<ISubheaderProps, 'backgroundColor' | 'textColor'>>`
-  background-color: ${props => props.backgroundColor ?? '#000'};
-  color: ${props => props.textColor ?? '#fff'};
+  background-color: ${props => props.backgroundColor ?? colors.black};
+  color: ${props => props.textColor ?? colors.white};
   display: flex;
   align-items: center;
   height: 90px;
@@ -21,7 +22,7 @@ const StyledSubheader = styled.div<Pick<ISubheaderProps, 'backgroundColor' | 'te
 const SubheaderTitle = styled.h1`
   font-size: 1.2em;
   font-weight: bold;
-  color: #fff;
+  color: ${colors.white};
   margin: 0;
   line-height: 1em;
 `;

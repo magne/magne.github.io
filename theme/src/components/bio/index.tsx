@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { ISiteMetadata } from '../../utils/models';
 import Avatar from '../avatar';
 import SocialChannelList from '../social-channel-list';
+import { colors } from '../../tokens';
 
 interface IBioProps {
   textAlign: 'left' | 'center' | 'right' | 'justify';
@@ -20,7 +21,7 @@ const StyledBio = styled.section<Pick<IBioProps, 'textAlign'>>`
 const AuthorDescription = styled.p`
   margin: 10px 0 13px;
   a {
-    color: #000;
+    color: ${colors.black};
     text-decoration: underline;
   }
 `;

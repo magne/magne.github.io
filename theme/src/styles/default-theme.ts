@@ -1,3 +1,5 @@
+import { IMedia } from '../tokens/media';
+
 export interface IDefaultTheme {
   layout: {
     backgroundColor: string;
@@ -7,13 +9,7 @@ export interface IDefaultTheme {
   fonts: {
     base: string;
   };
-  breakpoints: {
-    xs: string;
-    sm: string;
-    md: string;
-    lg: string;
-    xl: string;
-  };
+  media: IMedia;
   components: {
     container: {
       width: string;
