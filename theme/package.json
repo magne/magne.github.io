@@ -48,7 +48,7 @@
     "gatsby-transformer-remark": "^2.6.58",
     "gatsby-transformer-sharp": "^2.3.18",
     "gatsby-transformer-yaml": "^2.2.27",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.2",
     "prismjs": "^1.19.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
