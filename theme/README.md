@@ -1,5 +1,6 @@
 # The smallest possible Gatsby theme
 
+
 ## Quick Start
 
 ```shell
