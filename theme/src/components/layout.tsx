@@ -1,17 +1,22 @@
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, PageRendererProps, useStaticQuery } from 'gatsby';
 import React, { FunctionComponent, ReactNode } from 'react';
+import { withTheme } from 'styled-components';
+import { IDefaultTheme } from '../styles/default-theme';
 import GlobalStyle from '../styles/global-style';
 import { ISiteMetadata } from '../utils/models';
 import Footer from './footer';
 import Header from './header';
 import Navigation from './navigation';
 
-interface ILayoutProps {
+interface ILayoutProps extends PageRendererProps {
   children: ReactNode;
   bigHeader?: boolean;
+  theme: IDefaultTheme;
 }
 
-const Layout: FunctionComponent<ILayoutProps> = ({ children, bigHeader = true }) => {
+const Layout: FunctionComponent<ILayoutProps> = withTheme((props: ILayoutProps) => {
+  const { children, bigHeader = true } = props;
+
   const data = useStaticQuery<ISiteMetadata>(graphql`
     query SiteMetadata {
       site {
@@ -35,7 +40,7 @@ const Layout: FunctionComponent<ILayoutProps> = ({ children, bigHeader = true })
 
   return (
     <>
-      <GlobalStyle />
+      <GlobalStyle theme={props.theme} />
       {bigHeader ? (
         <Header
           title={data.site.siteMetadata.title}
@@ -51,6 +56,6 @@ const Layout: FunctionComponent<ILayoutProps> = ({ children, bigHeader = true })
       <Footer menu={data.site.siteMetadata.footerMenu} owner={data.site.siteMetadata.title} />
     </>
   );
-};
+});
 
 export default Layout;

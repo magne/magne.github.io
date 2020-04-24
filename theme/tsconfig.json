@@ -50,6 +50,7 @@
       "./"
     ],
     "typeRoots": [                            /* List of folders to include type definitions from. */
+      "./types",
       "./node_modules/@types"
     ],
     // "types": [],                           /* Type declaration files to be included in compilation. */

@@ -1,20 +1,20 @@
 import * as prismStyle from 'prismjs/themes/prism-okaidia.css';
 import { createGlobalStyle } from 'styled-components';
 import styledNormalize from 'styled-normalize';
-import Theme from './theme';
 import { colors } from '../tokens';
+import { IDefaultTheme } from './default-theme';
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle<{ theme: IDefaultTheme }>`
   ${styledNormalize}
   ${prismStyle}
 
   html {
     box-sizing: border-box;
-    background-color: ${Theme.layout.backgroundColor};
+    background-color: ${(props) => props.theme.layout.backgroundColor};
   }
 
   body {
-    font-family: ${Theme.fonts.base};
+    font-family: ${(props) => props.theme.fonts.base};
     line-height: 1.9em;
   }
 

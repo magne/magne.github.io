@@ -1,15 +1,16 @@
 {
   "private": true,
   "scripts": {
-    "build": "yarn workspace site build",
+    "build": "yarn workspace gatsby-styled-components-dark-mode build && yarn workspace site build",
     "clean": "yarn workspace theme clean && yarn workspace site clean",
     "serve": "yarn workspace site serve",
     "develop": "yarn workspace site develop",
     "lint": "yarn type-check && eslint */**/*.{js,jsx,ts,tsx}",
-    "type-check": "yarn workspace theme type-check"
+    "type-check": "yarn workspace theme type-check && yarn workspace gatsby-styled-components-dark-mode type-check"
   },
   "workspaces": [
     "site",
-    "theme"
+    "theme",
+    "gatsby-styled-components-dark-mode"
   ]
 }

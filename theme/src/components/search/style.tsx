@@ -1,7 +1,6 @@
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import Theme from '../../styles/theme';
-import { colors } from '../../tokens';
+import { colors, media } from '../../tokens';
 
 export const SearchBox = styled.div<{ readonly open: boolean }>`
   display: ${props => (props.open ? 'block' : 'none')};
@@ -22,11 +21,11 @@ export const SearchBox = styled.div<{ readonly open: boolean }>`
     top: -8px;
     right: 38px;
     transform: rotate(45deg);
-    @media ${Theme.media.sm} {
+    @media ${media.sm} {
       right: 17px;
     }
   }
-  @media ${Theme.media.sm} {
+  @media ${media.sm} {
     width: 300px;
     left: -260px;
   }

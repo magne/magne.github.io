@@ -3,7 +3,6 @@ import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import Theme from '../styles/theme';
 
 interface IErrorProps {
   location: Location;
@@ -35,7 +34,7 @@ const ErrorDescription = styled.h2`
 `;
 
 const BackLink = styled(Link)`
-  color: ${Theme.layout.primaryColor};
+  color: ${props => props.theme.layout.primaryColor};
   &:hover {
     text-decoration: underline;
   }

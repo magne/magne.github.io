@@ -5,13 +5,15 @@ import Layout from '../components/layout';
 import PageSidebarContent from '../components/page-sidebar-content';
 import SEO from '../components/seo';
 import Subheader from '../components/subheader';
-import Theme from '../styles/theme';
+import { IDefaultTheme } from '../styles/default-theme';
 import { IPage } from '../utils/models';
+import { media } from '../tokens';
 
 interface IPageTemplateProps {
   pathContext: {
     page: IPage;
   };
+  theme: IDefaultTheme;
   location: Location;
 }
 
@@ -19,7 +21,7 @@ const PageContainer = styled(Container)`
   display: flex;
   justify-content: space-between;
 
-  @media ${Theme.media.md} {
+  @media ${media.md} {
     display: block;
   }
 
@@ -29,14 +31,14 @@ const PageContainer = styled(Container)`
 
   li > a,
   p > a  {
-    color: ${Theme.layout.linkColor};
-    border-bottom: 2px ${Theme.layout.linkColor} solid;
+    color: ${props => props.theme.layout.linkColor};
+    border-bottom: 2px ${props => props.theme.layout.linkColor} solid;
   }
 `;
 
 const PageSidebar = styled.aside`
   margin-left: 50px;
-  @media ${Theme.media.md} {
+  @media ${media.md} {
     margin-left: 0;
   }
 `;
@@ -47,7 +49,7 @@ const PageTemplate: FunctionComponent<IPageTemplateProps> = ({ pathContext, loca
   return (
     <Layout bigHeader={false}>
       <SEO title={page.frontmatter.title} description={page.frontmatter.excerpt} location={location} />
-      <Subheader title={page.frontmatter.title} backgroundColor={Theme.layout.primaryColor} />
+      <Subheader title={page.frontmatter.title} backgroundColor={props => props.theme.layout.primaryColor} />
       <PageContainer>
         <section dangerouslySetInnerHTML={{ __html: page.html }} />
         <PageSidebar>

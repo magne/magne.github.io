@@ -64,6 +64,13 @@ export default (themeOptions: IThemeOptions): {} => {
       'gatsby-plugin-sitemap',
       'gatsby-plugin-sharp',
       {
+        resolve: 'gatsby-styled-components-dark-mode',
+        options: {
+          light: require(`${__dirname}/src/styles/theme.ts`).lightTheme,
+          dark: require(`${__dirname}/src/styles/theme.ts`).darkTheme,
+        },
+      },
+      {
         resolve: 'gatsby-plugin-manifest',
         options: manifest,
       },
@@ -99,11 +106,11 @@ export default (themeOptions: IThemeOptions): {} => {
           ],
           resolvers: {
             MarkdownRemark: {
-              title: node => node.frontmatter.title,
-              content: node => node.html,
-              tags: node => node.frontmatter.tags,
-              excerpt: node => node.frontmatter.excerpt,
-              path: node => node.frontmatter.path,
+              title: (node) => node.frontmatter.title,
+              content: (node) => node.html,
+              tags: (node) => node.frontmatter.tags,
+              excerpt: (node) => node.frontmatter.excerpt,
+              path: (node) => node.frontmatter.path,
             },
           },
         },
@@ -172,7 +179,7 @@ export default (themeOptions: IThemeOptions): {} => {
           feeds: [
             {
               serialize: ({ query: { site, allMarkdownRemark } }) => {
-                return allMarkdownRemark.edges.map(edge => {
+                return allMarkdownRemark.edges.map((edge) => {
                   return Object.assign({}, edge.node.frontmatter, {
                     description: edge.node.frontmatter.excerpt,
                     date: edge.node.frontmatter.created,

@@ -1,16 +1,15 @@
 import Typed from 'react-typed';
 import styled from 'styled-components';
-import Theme from '../../styles/theme';
-import { colors } from '../../tokens';
+import { colors, media } from '../../tokens';
 
 export const StyledHeader = styled.header`
   display: flex;
-  background: ${Theme.components.header.background};
+  background: ${props => props.theme.components.header.background};
   flex-direction: column;
-  height: ${Theme.components.header.height};
+  height: ${props => props.theme.components.header.height};
   border-bottom: 2px ${colors.veryLightGrey3} solid;
 
-  @media ${Theme.media.sm} {
+  @media ${media.sm} {
     height: 30vh;
   }
 `;
@@ -22,7 +21,7 @@ export const TitleWrapper = styled.div`
   height: 100%;
   flex-direction: column;
 
-  @media ${Theme.media.sm} {
+  @media ${media.sm} {
     margin-top: -50px;
     font-size: 0.75em;
     margin-left: 10px;

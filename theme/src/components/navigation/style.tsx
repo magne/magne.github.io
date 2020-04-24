@@ -1,8 +1,7 @@
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import Theme from '../../styles/theme';
+import { colors, media } from '../../tokens';
 import { Container } from '../common';
-import { colors } from '../../tokens';
 
 export const NavContainer = styled.div<{ dark?: boolean }>`
   z-index: 1000;
@@ -27,7 +26,7 @@ export const NavWrapper = styled.div`
   width: 100%;
   height: 70px;
   white-space: nowrap;
-  @media ${Theme.media.sm} {
+  @media ${media.sm} {
     width: 90%;
   }
 `;
@@ -40,7 +39,7 @@ export const NavMenu = styled.ul<{ mobile?: boolean }>`
   ${props =>
     props.mobile &&
     `
-  @media ${Theme.media.sm} {
+  @media ${media.sm} {
     width: 80%;
     overflow-x: auto;
     overflow-y: hidden;

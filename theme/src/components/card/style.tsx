@@ -1,9 +1,8 @@
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
-import Theme from '../../styles/theme';
+import { colors, media } from '../../tokens';
 import { ICardProps } from './index';
-import { colors } from '../../tokens';
 
 export const StyledCard = styled(Link)`
   display: block;
@@ -23,7 +22,7 @@ export const StyledCard = styled(Link)`
 export const StyledArticle = styled.article`
   display: inline-block;
   width: 100%;
-  @media ${Theme.media.sm} {
+  @media ${media.sm} {
     grid-area: unset !important;
   }
 `;
@@ -41,7 +40,7 @@ export const FeaturedImage = styled(Img)<Pick<ICardProps, 'halfImage'>>`
           margin-right: 30px;
           height: 320px;
           border-bottom-left-radius: 3px;
-          @media ${Theme.media.sm} {
+          @media ${media.sm} {
             width: 100%;
             float: none;
             height: 190px;

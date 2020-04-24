@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React, { FunctionComponent } from 'react';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import url from 'url';
 import { ISiteMetadata } from '../../utils/models';
 

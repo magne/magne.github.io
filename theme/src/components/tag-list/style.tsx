@@ -1,7 +1,6 @@
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import Theme from '../../styles/theme';
-import { colors } from '../../tokens';
+import { colors, media } from '../../tokens';
 
 export const TagContainer = styled.section`
   background-color: ${colors.white};
@@ -23,7 +22,7 @@ export const StyledTagList = styled.ul`
   padding: 0;
   justify-content: center;
 
-  @media ${Theme.media.sm} {
+  @media ${media.sm} {
     flex-wrap: wrap;
     justify-content: flex-start;
   }
@@ -37,7 +36,7 @@ export const StyledTag = styled.li`
     transform: scale(1.04);
   }
 
-  @media ${Theme.media.sm} {
+  @media ${media.sm} {
     width: 50%;
     margin: 0 0 20px 0;
 

@@ -2,8 +2,8 @@ import { graphql, Link, useStaticQuery } from 'gatsby';
 import Img, { FixedObject } from 'gatsby-image';
 import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
-import Theme from '../../styles/theme';
 import { LogoQuery } from './__generated__/LogoQuery';
+import { media } from '../../tokens';
 
 interface ILogoProps {
   title: string;
@@ -13,7 +13,7 @@ const LogoImage = styled(Img)`
   max-height: 30px;
   width: 30px;
   margin-right: 45px;
-  @media ${Theme.media.sm} {
+  @media ${media.sm} {
     margin-right: 15px;
   }
 `;

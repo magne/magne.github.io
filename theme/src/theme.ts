@@ -22,6 +22,8 @@
 import { colors } from './tokens/colors';
 import { IColors } from './tokens/colors';
 import { IMedia } from './tokens/media';
+import Theme from './styles/theme';
+import { IDefaultTheme } from './styles/default-theme';
 
 export interface ITheme {
   colors: IColors;

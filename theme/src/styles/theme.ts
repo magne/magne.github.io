@@ -23,3 +23,16 @@ const Theme: IDefaultTheme = {
 };
 
 export default Theme;
+
+export const lightTheme: IDefaultTheme = {
+  ...Theme,
+};
+
+export const darkTheme: IDefaultTheme = {
+  ...Theme,
+  layout: {
+    backgroundColor: colors.lightYellow,
+    primaryColor: colors.veryDarkGrey,
+    linkColor: colors.veryDarkGrey,
+  },
+};

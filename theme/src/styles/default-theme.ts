@@ -1,6 +1,7 @@
 import { IMedia } from '../tokens/media';
+import { DefaultTheme } from 'styled-components';
 
-export interface IDefaultTheme {
+export interface IDefaultTheme extends DefaultTheme {
   layout: {
     backgroundColor: string;
     primaryColor: string;

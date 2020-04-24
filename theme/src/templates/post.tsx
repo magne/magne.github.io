@@ -10,9 +10,8 @@ import Layout from '../components/layout';
 import ReadingProgress from '../components/reading-progress';
 import SEO from '../components/seo';
 import Toc from '../components/toc';
-import Theme from '../styles/theme';
+import { colors, media } from '../tokens';
 import { IPost, ITag } from '../utils/models';
-import { colors } from '../tokens';
 
 interface IPostTemplateProps {
   data: {
@@ -33,7 +32,7 @@ const LeftSidebar = styled.div<{ show?: boolean }>`
   max-width: 225px;
   transition: opacity 0.5s, z-index 0.5s;
 
-  @media ${Theme.media.xl} {
+  @media ${media.xl} {
     position: fixed;
     opacity: ${props => (props.show ? 1 : 0)};
     z-index: ${props => (props.show ? 1000 : -1)};
@@ -58,15 +57,15 @@ const PostContent = styled.div`
 
   li > a,
   p > a {
-    color: ${Theme.layout.linkColor};
-    border-bottom: 2px ${Theme.layout.linkColor} solid;
+    color: ${props => props.theme.layout.linkColor};
+    border-bottom: 2px ${props => props.theme.layout.linkColor} solid;
   }
   pre {
     margin: 30px 0;
   }
   blockquote {
-    border-left: 4px ${Theme.layout.primaryColor} solid;
-    background-color: ${Theme.layout.backgroundColor};
+    border-left: 4px ${props => props.theme.layout.primaryColor} solid;
+    background-color: ${props => props.theme.layout.backgroundColor};
     margin: 30px 0;
     padding: 5px 20px;
     border-radius: 0.3em;
@@ -119,14 +118,14 @@ const TocWrapper = styled.div`
 const PostHeader = styled.header`
   padding: 40px;
 
-  @media ${Theme.media.sm} {
+  @media ${media.sm} {
     padding: 20px;
   }
 `;
 
 const FeaturedImage = styled(Img)`
   border-radius: 0;
-  @media ${Theme.media.xl} {
+  @media ${media.xl} {
     margin-left: -1px;
     margin-right: -1px;
   }
@@ -134,7 +133,7 @@ const FeaturedImage = styled(Img)`
 
 const StyledPost = styled.section`
   padding: 40px;
-  @media ${Theme.media.sm} {
+  @media ${media.sm} {
     padding: 20px;
   }
 `;
@@ -185,7 +184,7 @@ const PostAdditionContent = styled(Container)`
 const BioWrapper = styled.div`
   width: 50%;
   margin: auto;
-  @media ${Theme.media.sm} {
+  @media ${media.sm} {
     width: 100%;
   }
 `;
@@ -205,7 +204,7 @@ const ToggleTocButton = styled.button`
   background-color: ${colors.veryDarkMostlyBlackBlue};
   color: ${colors.white};
   outline: none;
-  @media (min-width: ${Theme.media.xl}) {
+  @media (min-width: ${media.xl}) {
     display: none;
   }
 `;
