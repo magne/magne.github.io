@@ -1,11 +1,12 @@
 import React, { FunctionComponent } from 'react';
+import styled from 'styled-components';
+import { colors } from '../../tokens/colors';
+import { Feature, isFeatureEnabled } from '../../utils/features';
 import { IMenuItem } from '../../utils/models';
+import { DarkModeToggle } from '../dark-mode';
 import Logo from '../logo';
 import { Search } from '../search';
 import { Nav, NavContainer, NavLink, NavMenu, NavMenuItem, NavWrapper, SearchContainer } from './style';
-import { DarkModeToggle } from '../dark-mode';
-import { colors } from '../../tokens/colors';
-import styled from 'styled-components';
 
 interface INavigationProps {
   title: string;
@@ -39,9 +40,13 @@ const Navigation: FunctionComponent<INavigationProps> = ({ title, menu, dark = f
             </NavMenu>
           )}
         </SearchContainer>
-        <StyledDarkModeToggle>
-          <DarkModeToggle />
-        </StyledDarkModeToggle>
+        {isFeatureEnabled(Feature.darkMode) ? (
+          <StyledDarkModeToggle>
+            <DarkModeToggle />
+          </StyledDarkModeToggle>
+        ) : (
+            <></>
+          )}
       </NavWrapper>
     </Nav>
   </NavContainer>

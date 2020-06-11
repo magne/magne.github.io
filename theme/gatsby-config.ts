@@ -1,3 +1,4 @@
+import { Feature, isFeatureEnabled } from './src/utils/features';
 import { IThemeOptions } from './src/utils/models';
 
 export default (themeOptions: IThemeOptions): {} => {
@@ -63,7 +64,7 @@ export default (themeOptions: IThemeOptions): {} => {
       'gatsby-plugin-styled-components',
       'gatsby-plugin-sitemap',
       'gatsby-plugin-sharp',
-      {
+      isFeatureEnabled(Feature.darkMode) && {
         resolve: 'gatsby-styled-components-dark-mode',
         options: {
           light: require(`${__dirname}/src/styles/theme.ts`).lightTheme,
