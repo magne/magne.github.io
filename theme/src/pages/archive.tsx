@@ -31,7 +31,7 @@ export default ArchivePage;
 
 export const query = graphql`
   query Archive {
-    allPosts: allMarkdownRemark(
+    allPosts: allMdx(
       filter: { fileAbsolutePath: { regex: "/(posts)/.*\\\\.md$/" } }
       sort: { fields: frontmatter___created, order: DESC }
     ) {

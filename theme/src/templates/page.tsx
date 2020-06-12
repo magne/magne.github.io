@@ -1,3 +1,4 @@
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
 import { Container } from '../components/common';
@@ -6,8 +7,8 @@ import PageSidebarContent from '../components/page-sidebar-content';
 import SEO from '../components/seo';
 import Subheader from '../components/subheader';
 import { IDefaultTheme } from '../styles/default-theme';
-import { IPage } from '../utils/models';
 import { media } from '../tokens';
+import { IPage } from '../utils/models';
 
 interface IPageTemplateProps {
   pathContext: {
@@ -51,7 +52,9 @@ const PageTemplate: FunctionComponent<IPageTemplateProps> = ({ pathContext, loca
       <SEO title={page.frontmatter.title} description={page.frontmatter.excerpt} location={location} />
       <Subheader title={page.frontmatter.title} backgroundColor={props => props.theme.layout.primaryColor} />
       <PageContainer>
-        <section dangerouslySetInnerHTML={{ __html: page.html }} />
+        <section>
+          <MDXRenderer>{page.body}</MDXRenderer>
+        </section>
         <PageSidebar>
           <PageSidebarContent />
         </PageSidebar>

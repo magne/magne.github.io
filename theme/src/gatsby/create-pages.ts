@@ -1,7 +1,6 @@
 import { GatsbyNode } from 'gatsby';
-import { IThemeOptions } from '../utils/models';
-import { ITag, IPage, IPost } from '../utils/models';
 import slugify from 'slugify';
+import { IPage, IPost, ITag, IThemeOptions } from '../utils/models';
 
 interface IQueryResult {
   pages: {
@@ -20,18 +19,18 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
 
   const result = await graphql<IQueryResult>(`
     query CreatePages {
-      pages: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/(/pages/).*.(md)/" } }) {
+      pages: allMdx(filter: { fileAbsolutePath: { regex: "/(/pages/).*.(md)/" } }) {
         edges {
           node {
             frontmatter {
               title
               path
             }
-            html
+            body
           }
         }
       }
-      posts: allMarkdownRemark(
+      posts: allMdx(
         filter: { fileAbsolutePath: { regex: "/(posts)/.*\\\\.md$/" } }
         sort: { fields: frontmatter___created, order: DESC }
       ) {
@@ -62,7 +61,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
                 }
               }
             }
-            html
+            body
           }
         }
       }

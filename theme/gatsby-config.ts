@@ -108,7 +108,7 @@ export default (themeOptions: IThemeOptions): {} => {
           resolvers: {
             MarkdownRemark: {
               title: (node) => node.frontmatter.title,
-              content: (node) => node.html,
+              content: (node) => node.body,
               tags: (node) => node.frontmatter.tags,
               excerpt: (node) => node.frontmatter.excerpt,
               path: (node) => node.frontmatter.path,
@@ -117,9 +117,10 @@ export default (themeOptions: IThemeOptions): {} => {
         },
       },
       {
-        resolve: 'gatsby-transformer-remark',
+        resolve: 'gatsby-plugin-mdx',
         options: {
-          plugins: [
+          extensions: [".mdx", ".md"],
+          gatsbyRemarkPlugins: [
             'gatsby-remark-autolink-headers',
             'gatsby-remark-prismjs',
             {
@@ -163,7 +164,7 @@ export default (themeOptions: IThemeOptions): {} => {
         },
       },
       {
-        resolve: `gatsby-plugin-feed`,
+        resolve: `gatsby-plugin-feed-mdx`,
         options: {
           query: `
           {
@@ -179,26 +180,26 @@ export default (themeOptions: IThemeOptions): {} => {
         `,
           feeds: [
             {
-              serialize: ({ query: { site, allMarkdownRemark } }) => {
-                return allMarkdownRemark.edges.map((edge) => {
+              serialize: ({ query: { site, allMdx } }) => {
+                return allMdx.edges.map((edge) => {
                   return Object.assign({}, edge.node.frontmatter, {
                     description: edge.node.frontmatter.excerpt,
                     date: edge.node.frontmatter.created,
                     url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
                     guid: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
-                    custom_elements: [{ 'content:encoded': edge.node.html }],
+                    custom_elements: [{ 'content:encoded': edge.node.body }],
                   });
                 });
               },
               query: `
             {
-              allMarkdownRemark(
+              allMdx(
                 sort: { order: DESC, fields: [frontmatter___created] },
                 filter: { fileAbsolutePath: { regex: "/(posts)/.*\\\\.md$/" } }
               ) {
                 edges {
                   node {
-                    html
+                    body
                     frontmatter {
                       title
                       excerpt

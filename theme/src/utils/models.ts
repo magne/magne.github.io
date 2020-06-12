@@ -54,7 +54,7 @@ export interface IPost {
     updatedPretty: string;
     featuredImage?: any;
   };
-  html: string;
+  body: string;
   headings: Array<{ depth: number }>;
 }
 
@@ -64,7 +64,7 @@ export interface IPage {
     path: string;
     excerpt: string;
   };
-  html: string;
+  body: string;
 }
 
 export interface ITag {

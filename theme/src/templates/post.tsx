@@ -1,5 +1,6 @@
 import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React, { createRef, FunctionComponent, useState } from 'react';
 import { FaAlignJustify, FaTimes } from 'react-icons/fa';
 import slugify from 'slugify';
@@ -253,16 +254,18 @@ const PageTemplate: FunctionComponent<IPostTemplateProps> = ({ data, location })
               <PostTitle>{post.frontmatter.title}</PostTitle>
             </PostHeader>
             {post.frontmatter.featuredImage && <FeaturedImage sizes={post.frontmatter.featuredImage.childImageSharp.sizes} />}
-            <StyledPost dangerouslySetInnerHTML={{ __html: post.html }} className={'post'} />
+            <StyledPost className={'post'}>
+              <MDXRenderer>{post.body}</MDXRenderer>
+            </StyledPost>
             <PostFooter>
               <p>
                 Published under&nbsp;
                 {post.frontmatter.tags.map((tag, index) => (
-                  <span key={index}>
-                    <FooterTagLink to={`/tag/${slugify / (tag, { lower: true })}`}>{tag}</FooterTagLink>
-                    {post.frontmatter.tags.length > index + 1 && <>, </>}
-                  </span>
-                ))}
+                <span key={index}>
+                  <FooterTagLink to={`/tag/${slugify / (tag, { lower: true })}`}>{tag}</FooterTagLink>
+                  {post.frontmatter.tags.length > index + 1 && <>, </>}
+                </span>
+              ))}
                 &nbsp;on <time dateTime={post.frontmatter.created}>{post.frontmatter.createdPretty}</time>.
               </p>
               {post.frontmatter.updated !== post.frontmatter.created && (
@@ -289,7 +292,7 @@ export default PageTemplate;
 
 export const query = graphql`
   query PrimaryTag($postId: String!, $primaryTag: String!) {
-    post: markdownRemark(id: { eq: $postId }) {
+    post: mdx(id: { eq: $postId }) {
       headings {
         depth
       }
@@ -310,7 +313,7 @@ export const query = graphql`
           }
         }
       }
-      html
+      body
     }
     primaryTag: tags(name: { eq: $primaryTag }) {
       name

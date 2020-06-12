@@ -1,11 +1,11 @@
+import { graphql } from 'gatsby';
 import React, { FunctionComponent } from 'react';
 import Layout from '../components/layout';
-import SEO from '../components/seo';
-import { IPost, ITag } from '../utils/models';
-import Theme from '../styles/theme';
-import Subheader from '../components/subheader';
 import PostGrid from '../components/post-grid';
-import { graphql } from 'gatsby';
+import SEO from '../components/seo';
+import Subheader from '../components/subheader';
+import Theme from '../styles/theme';
+import { IPost, ITag } from '../utils/models';
 
 interface ITagTemplateProps {
   data: {
@@ -47,7 +47,7 @@ export const query = graphql`
       name
       color
     }
-    posts: allMarkdownRemark(
+    posts: allMdx(
       filter: { fileAbsolutePath: { regex: "/(posts)/.*\\\\.md$/" }, frontmatter: { tags: { eq: $tag } } }
       sort: { fields: frontmatter___created, order: DESC }
     ) {

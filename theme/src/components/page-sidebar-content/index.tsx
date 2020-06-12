@@ -1,8 +1,8 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
-import { Card } from '../card';
 import { media } from '../../tokens';
+import { Card } from '../card';
 
 const LatestPosts = styled.div`
   display: grid;
@@ -22,7 +22,7 @@ const LatestPosts = styled.div`
 const PageSidebarContent: FunctionComponent = () => {
   const latestPosts = useStaticQuery(graphql`
     query LatestPosts {
-      posts: allMarkdownRemark(
+      posts: allMdx(
         filter: { fileAbsolutePath: { regex: "/(posts)/.*\\\\.md$/" } }
         sort: { fields: frontmatter___created, order: DESC }
         limit: 3
