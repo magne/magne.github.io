@@ -48,7 +48,7 @@ export const query = graphql`
       color
     }
     posts: allMdx(
-      filter: { fileAbsolutePath: { regex: "/(posts)/.*\\\\.md$/" }, frontmatter: { tags: { eq: $tag } } }
+      filter: { fileAbsolutePath: { regex: "/(posts)/.*\\\\.mdx?$/" }, frontmatter: { tags: { eq: $tag } } }
       sort: { fields: frontmatter___created, order: DESC }
     ) {
       edges {

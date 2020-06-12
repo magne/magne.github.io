@@ -1,10 +1,8 @@
-import { MDXProvider } from '@mdx-js/react';
 import { graphql, PageRendererProps, useStaticQuery } from 'gatsby';
 import React, { FunctionComponent, ReactNode } from 'react';
-import { ThemeProvider, withTheme } from 'styled-components';
+import { withTheme } from 'styled-components';
 import { IDefaultTheme } from '../styles/default-theme';
 import GlobalStyle from '../styles/global-style';
-import { lightTheme } from '../styles/theme';
 import { Feature, isFeatureEnabled } from '../utils/features';
 import { ISiteMetadata } from '../utils/models';
 import Footer from './footer';
@@ -41,11 +39,7 @@ const Layout: FunctionComponent<ILayoutProps> = withTheme((props: ILayoutProps) 
     }
   `);
 
-  const components = {
-    code: (props) => <code {...props} />
-  }
-
-  const layout = (props: ILayoutProps) => (
+  return (
     <>
       <GlobalStyle theme={props.theme} />
       {bigHeader ? (
@@ -64,18 +58,10 @@ const Layout: FunctionComponent<ILayoutProps> = withTheme((props: ILayoutProps) 
             dark={!!isFeatureEnabled(Feature.darkMode)}
           />
         )}
-      <MDXProvider components={components}>
-        <main>{children}</main>
-      </MDXProvider>
+      <main>{children}</main>
       <Footer menu={data.site.siteMetadata.footerMenu} owner={data.site.siteMetadata.title} />
     </>
   );
-
-  if (!!isFeatureEnabled(Feature.darkMode)) {
-    return layout(props);
-  }
-
-  return <ThemeProvider theme={lightTheme}>{layout(props)}</ThemeProvider>;
 });
 
 export default Layout;

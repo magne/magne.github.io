@@ -19,7 +19,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
 
   const result = await graphql<IQueryResult>(`
     query CreatePages {
-      pages: allMdx(filter: { fileAbsolutePath: { regex: "/(/pages/).*.(md)/" } }) {
+      pages: allMdx(filter: { fileAbsolutePath: { regex: "/(/pages/).*.(mdx?)/" } }) {
         edges {
           node {
             frontmatter {
@@ -31,7 +31,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
         }
       }
       posts: allMdx(
-        filter: { fileAbsolutePath: { regex: "/(posts)/.*\\\\.md$/" } }
+        filter: { fileAbsolutePath: { regex: "/(posts)/.*\\\\.mdx?$/" } }
         sort: { fields: frontmatter___created, order: DESC }
       ) {
         edges {

@@ -17,7 +17,8 @@ module.exports = {
     // Place to specify ESLint rules.
     '@typescript-eslint/interface-name-prefix': ['error', { prefixWithI: 'always' }],
     'react/prop-types': 'off',
-    '@typescript-eslint/ban-ts-ignore': 'off'
+    '@typescript-eslint/ban-ts-ignore': 'off',
+    'strict': 0
   },
   settings: {
     react: {

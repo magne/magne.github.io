@@ -23,7 +23,7 @@ const PageSidebarContent: FunctionComponent = () => {
   const latestPosts = useStaticQuery(graphql`
     query LatestPosts {
       posts: allMdx(
-        filter: { fileAbsolutePath: { regex: "/(posts)/.*\\\\.md$/" } }
+        filter: { fileAbsolutePath: { regex: "/(posts)/.*\\\\.mdx?$/" } }
         sort: { fields: frontmatter___created, order: DESC }
         limit: 3
       ) {

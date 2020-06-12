@@ -32,7 +32,7 @@ export default ArchivePage;
 export const query = graphql`
   query Archive {
     allPosts: allMdx(
-      filter: { fileAbsolutePath: { regex: "/(posts)/.*\\\\.md$/" } }
+      filter: { fileAbsolutePath: { regex: "/(posts)/.*\\\\.mdx?$/" } }
       sort: { fields: frontmatter___created, order: DESC }
     ) {
       edges {

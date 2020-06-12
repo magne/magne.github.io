@@ -1,6 +1,6 @@
 declare module 'fflip';
 
-declare function require(name: string): string;
+//declare function require(name: string): string;
 
 declare module '*.css' {
   interface IClassNames {

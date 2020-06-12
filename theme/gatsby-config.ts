@@ -58,8 +58,12 @@ export default (themeOptions: IThemeOptions): {} => {
       },
     },
     plugins: [
-      'gatsby-plugin-typescript',
-      'gatsby-transformer-sharp',
+      {
+        resolve: `gatsby-transformer-sharp`,
+        options: {
+          checkSupportedExtensions: false,
+        },
+      },
       'gatsby-plugin-react-helmet',
       'gatsby-plugin-styled-components',
       'gatsby-plugin-sitemap',
@@ -197,7 +201,7 @@ export default (themeOptions: IThemeOptions): {} => {
             {
               allMdx(
                 sort: { order: DESC, fields: [frontmatter___created] },
-                filter: { fileAbsolutePath: { regex: "/(posts)/.*\\\\.md$/" } }
+                filter: { fileAbsolutePath: { regex: "/(posts)/.*\\\\.mdx?$/" } }
               ) {
                 edges {
                   node {
