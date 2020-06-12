@@ -122,7 +122,6 @@ export default (themeOptions: IThemeOptions): {} => {
           extensions: [".mdx", ".md"],
           gatsbyRemarkPlugins: [
             'gatsby-remark-autolink-headers',
-            'gatsby-remark-prismjs',
             {
               resolve: 'gatsby-remark-images',
               options: {
@@ -130,6 +129,9 @@ export default (themeOptions: IThemeOptions): {} => {
               },
             },
           ],
+          rehypePlugins: [
+            require('@mapbox/rehype-prism')
+          ]
         },
       },
       {

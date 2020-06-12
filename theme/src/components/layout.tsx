@@ -1,3 +1,4 @@
+import { MDXProvider } from '@mdx-js/react';
 import { graphql, PageRendererProps, useStaticQuery } from 'gatsby';
 import React, { FunctionComponent, ReactNode } from 'react';
 import { ThemeProvider, withTheme } from 'styled-components';
@@ -40,6 +41,10 @@ const Layout: FunctionComponent<ILayoutProps> = withTheme((props: ILayoutProps) 
     }
   `);
 
+  const components = {
+    code: (props) => <code {...props} />
+  }
+
   const layout = (props: ILayoutProps) => (
     <>
       <GlobalStyle theme={props.theme} />
@@ -52,14 +57,16 @@ const Layout: FunctionComponent<ILayoutProps> = withTheme((props: ILayoutProps) 
           search={data.site.siteMetadata.search}
         />
       ) : (
-        <Navigation
-          title={data.site.siteMetadata.title}
-          menu={data.site.siteMetadata.menu}
-          showSearch={data.site.siteMetadata.search}
-          dark={!!isFeatureEnabled(Feature.darkMode)}
-        />
-      )}
-      <main>{children}</main>
+          <Navigation
+            title={data.site.siteMetadata.title}
+            menu={data.site.siteMetadata.menu}
+            showSearch={data.site.siteMetadata.search}
+            dark={!!isFeatureEnabled(Feature.darkMode)}
+          />
+        )}
+      <MDXProvider components={components}>
+        <main>{children}</main>
+      </MDXProvider>
       <Footer menu={data.site.siteMetadata.footerMenu} owner={data.site.siteMetadata.title} />
     </>
   );
