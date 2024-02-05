@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "astro/tsconfigs/strictest",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "verbatimModuleSyntax": true,
+    // Report an error when importing a file using a casing different from the casing on disk.
+    "forceConsistentCasingInFileNames": true,
+    // Skip typechecking libraries and .d.ts files
+    "skipLibCheck": true,
+    "paths": {
+      "@*": [
+        "src/*"
+      ]
+    },
+  },
+  "exclude": [
+    "node_modules",
+    ".vscode",
+    "dist"
+  ]
+}
