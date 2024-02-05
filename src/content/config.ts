@@ -1,4 +1,4 @@
-import { CATEGORIES } from '@config/categories'
+import { CATEGORIES } from '@data/categories'
 import { defineCollection, z } from 'astro:content'
 
 const postsCollection = defineCollection({

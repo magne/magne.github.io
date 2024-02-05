@@ -15,7 +15,8 @@ module.exports = {
       files: '*.astro',
       options: {
         parser: 'astro',
-        tabWidth: 2
+        printWidth: 150,
+        tabWidth: 4
       }
     }
   ]

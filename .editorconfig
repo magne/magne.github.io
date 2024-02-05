@@ -12,7 +12,8 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 
 [*.astro]
-max_line_length = 120
+indent_size = 4
+max_line_length = 150
 
 [*.{cjs,js,jsx,mjs,ts,tsx}]
 max_line_length = 120

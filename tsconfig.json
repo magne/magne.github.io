@@ -9,6 +9,9 @@
     // Skip typechecking libraries and .d.ts files
     "skipLibCheck": true,
     "paths": {
+      "@site-config": [
+        "src/data/site-config.ts"
+      ],
       "@*": [
         "src/*"
       ]

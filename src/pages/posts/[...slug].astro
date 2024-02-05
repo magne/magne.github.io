@@ -1,0 +1,65 @@
+---
+import Disqus from '@components/Disqus.astro'
+import ListRelatedPosts from '@components/ListRelatedPosts.astro'
+import Share from '@components/Share.astro'
+import TableOfContents from '@components/TableOfContents.astro'
+import Code from '@components/mdx/Code.astro'
+import SButton from '@components/mdx/SButton.astro'
+import { disqusConfig } from '@data/disqus.config'
+import BlogPost from '@layouts/BlogPost.astro'
+import { getPosts } from '@utils'
+import { getCollection, type CollectionEntry } from 'astro:content'
+
+const posts = await getCollection('posts')
+export async function getStaticPaths() {
+    const posts = await getPosts()
+
+    return posts.map((post) => ({
+        params: { slug: post.slug },
+        props: post
+    }))
+}
+type Props = CollectionEntry<'posts'>
+
+const post = Astro.props
+const MAX_POSTS = 3
+const getRelatedPosts = (post: Props) => {
+    const lowercaseTags = post.data.tags.map((tag) => tag.toLowerCase())
+    const relatedPosts = posts.filter((p) => p.slug !== post.slug && p.data.tags.some((t) => lowercaseTags.includes(t.toLowerCase())))
+    return relatedPosts.slice(0, MAX_POSTS)
+}
+
+const relatedPosts = getRelatedPosts(post)
+
+const { Content, headings, remarkPluginFrontmatter } = await post.render()
+
+const disqusEnabled = disqusConfig.enabled
+---
+
+---
+<BlogPost data={post.data} readTime={remarkPluginFrontmatter.readTime}>
+    <div class='mt-8 grid grid-cols-1 gap-10 md:grid-cols-[20%_auto]'>
+        <!-- aside -->
+        <aside class='hidden flex-col gap-8 md:flex'>
+            <Share />
+            <div class='sticky top-24 hidden self-start transition-all duration-200 md:block'>
+                {headings && headings.length > 0 && <TableOfContents {headings} />}
+            </div>
+        </aside>
+
+        <!-- post -->
+        <article class='w-full max-w-full'>
+            <div class='prose prose-lg mb-12 min-w-full dark:prose-invert md:prose-xl'>
+                <Content components={{ pre: Code, SButton }} />
+            </div>
+
+            <!-- related posts -->
+            <footer>
+                <h2 class='mb-6 text-lg font-bold dark:text-white'>Related Posts</h2>
+                <ListRelatedPosts posts={relatedPosts} />
+            </footer>
+        </article>
+    </div>
+
+    {disqusEnabled && <Disqus />}
+</BlogPost>
