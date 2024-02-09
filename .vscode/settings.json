@@ -1,14 +1,6 @@
 {
-  "eslint.validate": [
-    "astro",
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
-  "prettier.documentSelectors": [
-    "**/*.astro"
-  ],
+  "eslint.validate": ["astro", "javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "prettier.documentSelectors": ["**/*.astro"],
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -39,7 +31,5 @@
     "titleBar.inactiveForeground": "#e7e7e799"
   },
   "peacock.color": "#b0613b",
-  "cSpell.enableFiletypes": [
-    "markdown"
-  ]
+  "cSpell.enableFiletypes": ["markdown"]
 }
