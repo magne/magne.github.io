@@ -1,8 +1,7 @@
-// ts-ignore
-import type { CollectionEntry, CollectionKey } from 'astro:content'
-import { DateTime } from 'luxon'
 import * as child from 'node:child_process'
 import * as os from 'node:os'
+import { DateTime } from 'luxon'
+import type { CollectionEntry, CollectionKey } from 'astro:content'
 
 const gitPubDate = (path: string): DateTime => {
   try {
@@ -42,7 +41,7 @@ export const repoDates = <C extends CollectionKey>(entry: CollectionEntry<C>) =>
   if (updatedDate && pubDate < updatedDate) {
     entry.data = { ...entry.data, updatedDate: updatedDate.toJSDate() }
   } else {
-    delete entry.data.updatedDate
+    entry.data.updatedDate = undefined
   }
 
   return entry

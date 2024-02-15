@@ -4,9 +4,9 @@ import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
 import rehypeMathjax from 'rehype-mathjax'
+import rehypePrettyCode, { type Options } from 'rehype-pretty-code'
 import remarkMath from 'remark-math'
 import { remarkReadingTime } from './src/utils/readtime'
-import rehypePrettyCode, { type Options } from 'rehype-pretty-code'
 
 const prettyCodeOptions: Options = {
   theme: 'catppuccin-mocha',

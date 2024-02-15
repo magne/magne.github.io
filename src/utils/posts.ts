@@ -1,5 +1,5 @@
-import { getCollection } from 'astro:content'
 import { repoDates } from './repodates'
+import { getCollection } from 'astro:content'
 
 export const getCategories = async () => {
   const posts = await getCollection('posts')
@@ -17,7 +17,7 @@ export const getPosts = async (max?: number) => {
   return posts
     .filter((post) => import.meta.env.DEV || !post.data.draft)
     .map((post) => repoDates(post))
-    .sort((a, b) => b.data.pubDate!.valueOf() - a.data.pubDate!.valueOf())
+    .sort((a, b) => b.data.pubDate?.valueOf() - a.data.pubDate?.valueOf())
     .slice(0, max)
 }
 
@@ -27,8 +27,7 @@ export const getTags = async () => {
     posts
       .filter((post) => import.meta.env.DEV || !post.data.draft)
       .filter((post) => !!post.data.tags)
-      .map((post) => post.data.tags)
-      .flat()
+      .flatMap((post) => post.data.tags)
       .map((tag) => tag.toLowerCase())
   )
   return Array.from(tags)
