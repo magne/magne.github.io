@@ -29,7 +29,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "@types/luxon": "^3.4.2",
     "@types/node": "^20.11.16",
-    "@typescript-eslint/parser": "^6.21.0",
+    "@typescript-eslint/parser": "^7.0.2",
     "astro": "^4.4.0",
     "astro-font": "^0.0.77",
     "clsx": "^2.1.0",
