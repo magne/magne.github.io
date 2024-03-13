@@ -1,5 +1,5 @@
-import { repoDates } from './repodates'
 import { getCollection } from 'astro:content'
+import { repoDates } from './repodates'
 
 export const getCategories = async () => {
   const posts = await getCollection('posts')

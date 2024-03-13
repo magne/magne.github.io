@@ -1,5 +1,5 @@
-import { CATEGORIES } from '@data/categories'
 import { defineCollection, z } from 'astro:content'
+import { CATEGORIES } from '@data/categories'
 
 const postsCollection = defineCollection({
   type: 'content',

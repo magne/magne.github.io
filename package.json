@@ -9,7 +9,6 @@
     "postbuild": "pagefind --site dist",
     "sync": "astro sync",
     "preview": "astro preview",
-    "biome": "biome check .*.cjs *.cjs *.ts *.json src",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx,cjs,mjs,astro}\"",
     "format": "prettier --write  \"**/*.{js,jsx,ts,tsx,cjs,mjs,md,mdx,astro,json}\" && eslint --fix \"src/**/*.{js,ts,jsx,tsx,cjs,mjs,astro}\"",
     "pre-commit": "lint-staged",

@@ -6,7 +6,7 @@ import TitlePage from '@components/TitlePage.astro'
 import BaseLayout from '@layouts/BaseLayout.astro'
 import { siteConfig } from '@site-config'
 import { getCategories, getPosts, sluglify, unsluglify } from '@utils'
-import { type GetStaticPathsOptions } from 'astro'
+import type { GetStaticPathsOptions } from 'astro'
 
 export const getStaticPaths = async ({ paginate }: GetStaticPathsOptions) => {
     const categories = await getCategories()

@@ -1,5 +1,12 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.5.3/schema.json",
+  "files": {
+    "include": [".*.cjs", "*.cjs", "*.ts", "*.json", "src"]
+  },
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git"
+  },
   "organizeImports": {
     "enabled": true
   },
@@ -19,5 +26,22 @@
       "semicolons": "asNeeded",
       "trailingComma": "none"
     }
-  }
+  },
+  "overrides": [
+    {
+      "include": ["src/**/*.astro"],
+      "formatter": {
+        "lineWidth": 150,
+        "indentWidth": 4
+      }
+    },
+    {
+      "include": [".vscode"],
+      "json": {
+        "parser": {
+          "allowComments": true
+        }
+      }
+    }
+  ]
 }

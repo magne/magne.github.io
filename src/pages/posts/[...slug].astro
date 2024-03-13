@@ -1,4 +1,5 @@
 ---
+import { type CollectionEntry, getCollection } from 'astro:content'
 import Disqus from '@components/Disqus.astro'
 import ListRelatedPosts from '@components/ListRelatedPosts.astro'
 import Share from '@components/Share.astro'
@@ -8,7 +9,6 @@ import SButton from '@components/mdx/SButton.astro'
 import { disqusConfig } from '@data/disqus.config'
 import BlogPost from '@layouts/BlogPost.astro'
 import { getPosts } from '@utils'
-import { getCollection, type CollectionEntry } from 'astro:content'
 
 const posts = await getCollection('posts')
 export async function getStaticPaths() {
