@@ -29,7 +29,7 @@
     "@types/luxon": "^3.4.2",
     "@types/node": "^20.12.12",
     "@typescript-eslint/parser": "^7.9.0",
-    "astro": "^4.8.4",
+    "astro": "^4.9.1",
     "astro-font": "^0.0.81",
     "clsx": "^2.1.1",
     "eslint": "^8.57.0",
