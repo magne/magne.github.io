@@ -5,7 +5,9 @@
   },
   "vcs": {
     "enabled": true,
-    "clientKind": "git"
+    "clientKind": "git",
+    "useIgnoreFile": true,
+    "defaultBranch": "main"
   },
   "organizeImports": {
     "enabled": true
