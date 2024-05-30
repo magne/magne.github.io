@@ -13,12 +13,12 @@ export const getStaticPaths = async ({ paginate }: GetStaticPathsOptions) => {
     const posts = await getPosts()
 
     return categories.flatMap((category) => {
-        const unsluglifyNameCategory = unsluglify(category!.toLowerCase())
+        const unsluglifyNameCategory = unsluglify(category.toLowerCase())
         const filteredPosts = posts.filter((post) => post.data.category?.toLowerCase() === unsluglifyNameCategory)
 
         return paginate(filteredPosts, {
             params: {
-                category: sluglify(category!.toLowerCase())
+                category: sluglify(category.toLowerCase())
             },
             pageSize: siteConfig.paginationSize
         })

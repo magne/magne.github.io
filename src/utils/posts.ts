@@ -7,7 +7,7 @@ export const getCategories = async () => {
     posts
       .filter((post) => import.meta.env.DEV || !post.data.draft)
       .filter((post) => !!post.data.category)
-      .map((post) => post.data.category)
+      .map((post) => post.data.category as Exclude<typeof post.data.category, undefined>)
   )
   return Array.from(categories)
 }
