@@ -29,7 +29,7 @@
     "astro": "^4.9.2",
     "astro-font": "^0.0.81",
     "clsx": "^2.1.1",
-    "lefthook": "^1.6.13",
+    "lefthook": "^1.6.19",
     "luxon": "^3.4.4",
     "mdast-util-to-string": "^4.0.0",
     "pagefind": "^1.1.0",
