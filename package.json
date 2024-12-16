@@ -13,7 +13,7 @@
     "format": "biome check --write ."
   },
   "dependencies": {
-    "motion": "^11.13.4"
+    "motion": "^11.14.4"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
