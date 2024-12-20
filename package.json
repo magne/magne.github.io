@@ -26,10 +26,10 @@
     "@tailwindcss/typography": "^0.5.15",
     "@types/luxon": "^3.4.2",
     "@types/node": "^22.10.2",
-    "astro": "^5.0.9",
+    "astro": "^5.1.0",
     "astro-font": "^0.1.81",
     "clsx": "^2.1.1",
-    "lefthook": "^1.9.2",
+    "lefthook": "^1.10.0",
     "luxon": "^3.5.0",
     "mdast-util-to-string": "^4.0.0",
     "pagefind": "^1.2.0",
@@ -39,7 +39,7 @@
     "remark-math": "^6.0.0",
     "sharp": "^0.33.5",
     "tailwind-merge": "^2.5.5",
-    "tailwindcss": "^3.4.16",
+    "tailwindcss": "^3.4.17",
     "typescript": "^5.7.2"
   }
 }
