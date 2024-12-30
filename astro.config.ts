@@ -33,8 +33,5 @@ export default defineConfig({
     syntaxHighlight: false,
     remarkPlugins: [remarkReadingTime, remarkMath],
     rehypePlugins: [rehypeMathjax, [rehypePrettyCode, prettyCodeOptions]]
-  },
-  legacy: {
-    collections: true
   }
 })

@@ -11,7 +11,7 @@ export async function GET(context: APIContext) {
     site: context.site ?? import.meta.env.SITE,
     items: posts.map((post) => ({
       title: post.data.title,
-      link: `post/${post.slug}/`,
+      link: `post/${post.id}/`,
       pubDate: post.data.pubDate,
       description: post.data.excerpt,
       category: (post.data.category ? [post.data.category as string] : []).concat(...(post.data.tags ?? []))

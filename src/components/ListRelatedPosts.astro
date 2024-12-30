@@ -16,27 +16,27 @@ const { posts } = Astro.props
         posts.length > 0 ? (
             posts.map((post) => {
                 return (
-                    <div class='flex flex-wrap gap-2'>
-                        <div class='min-h-full'>
+                    <div class="flex flex-wrap gap-2">
+                        <div class="min-h-full">
                             <Image
                                 src={post.data.heroImage}
                                 width={200}
                                 height={200}
-                                format='webp'
-                                class='h-16 w-16 rounded-full object-cover  '
+                                format="webp"
+                                class="h-16 w-16 rounded-full object-cover  "
                                 alt={`img of ${post.data.title}`}
                             />
                         </div>
-                        <header class='flex items-center justify-center'>
-                            <a class='font-medium  hover:underline' href={`/posts/${post.slug}`}>
+                        <header class="flex items-center justify-center">
+                            <a class="font-medium  hover:underline" href={`/posts/${post.id}`}>
                                 {post.data.title}
                             </a>
                         </header>
                     </div>
-                )
+                );
             })
         ) : (
-            <span class='text-gray-500'>There are no related posts yet. 😢</span>
+            <span class="text-gray-500">There are no related posts yet. 😢</span>
         )
     }
 </section>
