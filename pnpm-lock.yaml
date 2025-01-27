@@ -46,8 +46,8 @@ importers:
         specifier: ^5.1.8
         version: 5.1.8(@types/node@22.10.7)(jiti@2.4.2)(rollup@4.31.0)(typescript@5.7.3)(yaml@2.7.0)
       astro-font:
-        specifier: ^0.1.81
-        version: 0.1.81
+        specifier: ^1.0.0
+        version: 1.0.0
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -884,8 +884,8 @@ packages:
     resolution: {integrity: sha512-LElXdjswlqjWrPpJFg1Fx4wpkOCxj1TDHlSV4PlaRxHGWko024xICaa97ZkMfs6DRKlCguiAI+rbXv5GWwXIkg==}
     hasBin: true
 
-  astro-font@0.1.81:
-    resolution: {integrity: sha512-rbrv/+ZSYdgyjBlhkAqfCjMxqqo6iEwnSo/rAdDt/POILsF0ChxMFhefIIzKEukrRGtVjEj1lrLRYk+AdV9scQ==}
+  astro-font@1.0.0:
+    resolution: {integrity: sha512-g0Oobl1oBg/GHaAzA2HdIWjbQic19wfSswHvBO+N+wKgWCfCjh0ANiOA3UBzMgUHJ67wqfoM4NZTq9+parkhOw==}
 
   astro@5.1.8:
     resolution: {integrity: sha512-7fNNceI/dXqGIkkZQjxhH31alAfgf33cDv34cPLCGFVSHHOpYG0NSrofnxdYf0BvWRlddqkq393UqDM5cJlv1w==}
@@ -3548,7 +3548,7 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro-font@0.1.81: {}
+  astro-font@1.0.0: {}
 
   astro@5.1.8(@types/node@22.10.7)(jiti@2.4.2)(rollup@4.31.0)(typescript@5.7.3)(yaml@2.7.0):
     dependencies:
