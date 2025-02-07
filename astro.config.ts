@@ -2,11 +2,12 @@ import { defineConfig } from 'astro/config'
 
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
-import tailwind from '@astrojs/tailwind'
 import rehypeMathjax from 'rehype-mathjax'
 import rehypePrettyCode, { type Options } from 'rehype-pretty-code'
 import remarkMath from 'remark-math'
 import { remarkReadingTime } from './src/utils/readtime'
+
+import tailwindcss from '@tailwindcss/vite'
 
 const prettyCodeOptions: Options = {
   theme: 'catppuccin-mocha',
@@ -28,10 +29,15 @@ const prettyCodeOptions: Options = {
 // https://astro.build/config
 export default defineConfig({
   site: import.meta.env.DEV ? 'https://localhost:4321' : 'https://blog.codehive.org',
-  integrations: [mdx(), sitemap(), tailwind()],
+  integrations: [mdx(), sitemap()],
+
   markdown: {
     syntaxHighlight: false,
     remarkPlugins: [remarkReadingTime, remarkMath],
     rehypePlugins: [rehypeMathjax, [rehypePrettyCode, prettyCodeOptions]]
+  },
+
+  vite: {
+    plugins: [tailwindcss()]
   }
 })
