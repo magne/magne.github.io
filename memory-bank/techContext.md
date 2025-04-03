@@ -5,7 +5,7 @@
 - **Astro**: Main framework for building the site
 - **TypeScript**: For type-safe development
 - **Markdown/MDX**: For content management
-- **CSS Modules**: For component styling
+- **Tailwind CSS**: For component styling and utility classes
 
 ## Development Environment
 
