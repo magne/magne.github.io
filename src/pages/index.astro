@@ -9,29 +9,29 @@ import { getPosts } from '@utils'
 const posts = await getPosts(siteConfig.maxPosts)
 ---
 
-<BaseLayout title='Home'>
+<BaseLayout title="Home">
     <TitlePage title="Magne's Corner" />
     <ListCategories />
 
     <div>
-        <h2 class='text-end text-lg font-medium tracking-wide'>Latest Posts</h2>
+        <h2 class="text-end text-lg font-medium tracking-wide">Latest Posts</h2>
         <ListPosts posts={posts} firstBig={true} />
     </div>
 </BaseLayout>
 
 <script>
-    import { animate } from 'motion'
+import { animate } from 'motion'
 
-    const showAnimations = localStorage.getItem('animations') === 'true'
-    if (showAnimations) {
-        animate(
-            '.title',
-            { y: [80, 0], opacity: [0, 1] },
-            {
-                duration: 2.5,
-                opacity: { duration: 3 },
-                // offset: [0, 0.55, 0.75]
-            }
-        )
-    }
+const showAnimations = localStorage.getItem('animations') === 'true'
+if (showAnimations) {
+    animate(
+        '.title',
+        { y: [80, 0], opacity: [0, 1] },
+        {
+            duration: 2.5,
+            opacity: { duration: 3 }
+            // offset: [0, 0.55, 0.75]
+        }
+    )
+}
 </script>

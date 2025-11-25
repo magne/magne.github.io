@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.7/schema.json",
   "files": {
     "includes": ["**/.*.cjs", "**/*.cjs", "**/*.ts", "**/*.json", "**/src/**"]
   },
@@ -37,6 +37,18 @@
       "quoteStyle": "single",
       "semicolons": "asNeeded",
       "trailingCommas": "none"
+    }
+  },
+  "html": {
+    "formatter": {
+      "enabled": true,
+      "selfCloseVoidElements": "always"
+    },
+    "experimentalFullSupportEnabled": true
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
     }
   },
   "overrides": [

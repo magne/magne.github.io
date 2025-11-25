@@ -1,6 +1,6 @@
+import type { CollectionEntry, CollectionKey } from 'astro:content'
 import * as child from 'node:child_process'
 import * as os from 'node:os'
-import type { CollectionEntry, CollectionKey } from 'astro:content'
 import { DateTime } from 'luxon'
 
 const gitPubDate = (path: string): DateTime => {

@@ -21,27 +21,26 @@ const SOCIALNETWORKS = [
 ]
 ---
 
-<header class='relative flex h-12 items-center font-semibold'>
-    <HeaderLink href='/' class='mr-auto text-lg' exactMatch>
-        Blog
-    </HeaderLink>
+<header class="relative flex h-12 items-center font-semibold">
+    <HeaderLink href="/" class="mr-auto text-lg" exactMatch>Blog</HeaderLink>
 
     <div
-        id='astro-header-drawer'
-        class='fixed inset-y-0 right-0 z-50 w-[200px] translate-x-full transform-gpu bg-white/95 p-6 shadow-lg
+        id="astro-header-drawer"
+        class="fixed inset-y-0 right-0 z-50 w-[200px] translate-x-full transform-gpu bg-white/95 p-6 shadow-lg
             backdrop-blur-sm transition-transform duration-300 ease-in-out dark:bg-gray-900/95 md:relative md:inset-auto md:h-auto
-            md:w-auto md:translate-x-0 md:transform-none md:bg-transparent md:p-0 md:shadow-none md:backdrop-filter-none dark:md:bg-transparent'
-        aria-label='Main navigation'
-        aria-hidden='true'
+            md:w-auto md:translate-x-0 md:transform-none md:bg-transparent md:p-0 md:shadow-none md:backdrop-filter-none dark:md:bg-transparent"
+        aria-label="Main navigation"
+        aria-hidden="true"
     >
-        <nav class='flex h-full flex-col justify-between gap-8 text-left md:w-full md:flex-row md:items-center md:gap-5'>
-            <div class='flex flex-col gap-4 md:flex-row md:items-center'>
-                <HeaderLink href='/tags' class='flex items-center gap-1 text-base hover:text-opacity-100'>
-                    <TagIcon /> Tags
+        <nav class="flex h-full flex-col justify-between gap-8 text-left md:w-full md:flex-row md:items-center md:gap-5">
+            <div class="flex flex-col gap-4 md:flex-row md:items-center">
+                <HeaderLink href="/tags" class="flex items-center gap-1 text-base hover:text-opacity-100">
+                    <TagIcon />
+                    Tags
                 </HeaderLink>
             </div>
 
-            <div class='flex items-center justify-center gap-3 md:justify-end'>
+            <div class="flex items-center justify-center gap-3 md:justify-end">
                 {SOCIALNETWORKS.map(network => (
                     <HeaderLink
                         class='hover:text-opacity-100'
@@ -56,56 +55,56 @@ const SOCIALNETWORKS = [
         </nav>
     </div>
 
-    <div class='flex items-center gap-3 md:pl-3' transition:persist='navbar'>
+    <div class="flex items-center gap-3 md:pl-3" transition:persist="navbar">
         <div>
             <Search />
         </div>
         <ToggleTheme />
         <button
-            id='astro-header-drawer-button'
-            type='button'
-            class='inline-flex items-center justify-center rounded-md p-1 hover:bg-gray-100 focus:outline-none focus:ring-2
-                focus:ring-inset focus:ring-indigo-500 dark:hover:bg-gray-800 md:hidden'
-            aria-controls='astro-header-drawer'
-            aria-expanded='false'
+            id="astro-header-drawer-button"
+            type="button"
+            class="inline-flex items-center justify-center rounded-md p-1 hover:bg-gray-100 focus:outline-none focus:ring-2
+                focus:ring-inset focus:ring-indigo-500 dark:hover:bg-gray-800 md:hidden"
+            aria-controls="astro-header-drawer"
+            aria-expanded="false"
         >
             <MenuIcon />
-            <span class='sr-only'>Toggle navigation menu</span>
+            <span class="sr-only">Toggle navigation menu</span>
         </button>
     </div>
 </header>
 
 <script>
-    const menu = document.getElementById('astro-header-drawer')
-    const menuButton = document.getElementById('astro-header-drawer-button')
-    let isOpen = false
+const menu = document.getElementById('astro-header-drawer')
+const menuButton = document.getElementById('astro-header-drawer-button')
+let isOpen = false
 
-    function updateMenuState(open: boolean) {
-        isOpen = open
-        menu?.classList.toggle('translate-x-full', !open)
-        menu?.classList.toggle('translate-x-0', open)
-        menu?.setAttribute('aria-hidden', (!open).toString())
-        menuButton?.setAttribute('aria-expanded', open.toString())
-    }
+function updateMenuState(open: boolean) {
+    isOpen = open
+    menu?.classList.toggle('translate-x-full', !open)
+    menu?.classList.toggle('translate-x-0', open)
+    menu?.setAttribute('aria-hidden', (!open).toString())
+    menuButton?.setAttribute('aria-expanded', open.toString())
+}
 
-    // Handle click events
-    menuButton?.addEventListener('click', () => updateMenuState(!isOpen))
+// Handle click events
+menuButton?.addEventListener('click', () => updateMenuState(!isOpen))
 
-    // Close menu when clicking outside
-    document.addEventListener('click', event => {
-        const target = event.target as HTMLElement
-        const isClickInside = menu?.contains(target) || menuButton?.contains(target)
+// Close menu when clicking outside
+document.addEventListener('click', (event) => {
+    const target = event.target as HTMLElement
+    const isClickInside = menu?.contains(target) || menuButton?.contains(target)
 
-        if (!isClickInside && isOpen) updateMenuState(false)
-    })
+    if (!isClickInside && isOpen) updateMenuState(false)
+})
 
-    // Handle escape key
-    document.addEventListener('keydown', event => {
-        if (event.key === 'Escape' && isOpen) updateMenuState(false)
-    })
+// Handle escape key
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && isOpen) updateMenuState(false)
+})
 
-    // Handle resize
-    window.addEventListener('resize', () => {
-        if (window.innerWidth >= 768 && isOpen) updateMenuState(false)
-    })
+// Handle resize
+window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768 && isOpen) updateMenuState(false)
+})
 </script>

@@ -1,8 +1,7 @@
-import { defineConfig } from 'astro/config'
-
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from 'astro/config'
 import rehypeMathjax from 'rehype-mathjax'
 import rehypePrettyCode, { type Options } from 'rehype-pretty-code'
 import remarkMath from 'remark-math'

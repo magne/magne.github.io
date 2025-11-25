@@ -24,18 +24,12 @@ const articleDate = pubDate.toISOString()
                     <p class="text-center text-sm text-opacity-50">
                         Published <FormattedDate date={pubDate} />
                     </p>
-                    <p class="text-center text-sm font-bold text-opacity-50">
-                        - {readTime}
-                    </p>
+                    <p class="text-center text-sm font-bold text-opacity-50">- {readTime}</p>
                 </div>
-                <h1 class="text-center text-4xl font-semibold md:pb-2.5 md:text-6xl">
-                    {title}
-                </h1>
+                <h1 class="text-center text-4xl font-semibold md:pb-2.5 md:text-6xl">{title}</h1>
             </div>
 
-            <div class="flex flex-wrap items-center justify-center gap-2 gap-y-4 md:gap-5">
-                {tags.map((tag) => <Tag {tag} />)}
-            </div>
+            <div class="flex flex-wrap items-center justify-center gap-2 gap-y-4 md:gap-5">{tags.map((tag) => <Tag {tag} />)}</div>
         </header>
 
         {
@@ -60,54 +54,54 @@ const articleDate = pubDate.toISOString()
         <div>
             <slot />
             <style is:global>
-                div[data-rehype-pretty-code-fragment] {
-                    background-color: #111;
-                }
-                pre > code {
-                    display: grid;
-                    background-color: rgba(200, 200, 255, 0.09);
-                }
-                .highlighted {
-                    background-color: rgba(200, 200, 255, 0.1);
-                    border-left-color: #60a5fa;
-                    border-left-width: 3px;
-                    border-left-style: solid;
-                }
+            div[data-rehype-pretty-code-fragment] {
+                background-color: #111;
+            }
+            pre > code {
+                display: grid;
+                background-color: rgba(200, 200, 255, 0.09);
+            }
+            .highlighted {
+                background-color: rgba(200, 200, 255, 0.1);
+                border-left-color: #60a5fa;
+                border-left-width: 3px;
+                border-left-style: solid;
+            }
             </style>
         </div>
     </article>
 </BaseLayout>
 
 <script>
-    const fnObserver = () => {
-        function handleIntersection(entries: IntersectionObserverEntry[]) {
-            entries.forEach((entry) => {
-                const index = document.querySelector(`aside a[href="#${entry.target.id}"]`);
+const fnObserver = () => {
+    function handleIntersection(entries: IntersectionObserverEntry[]) {
+        entries.forEach((entry) => {
+            const index = document.querySelector(`aside a[href="#${entry.target.id}"]`)
 
-                if (entry.isIntersecting) {
-                    index?.classList.remove("bg-slate-200", "dark:bg-slate-800"); // remove bg
-                    index?.classList.add("bg-indigo-600", "dark:bg-indigo-700", "text-white", "font-bold", "transition-colors", "duration-200");
-                } else {
-                    index?.classList.add("bg-slate-200", "dark:bg-slate-800"); // add bg
-                    index?.classList.remove("bg-indigo-600", "dark:bg-indigo-700", "text-white", "font-bold", "transition-colors", "duration-200");
-                }
-            });
-        }
+            if (entry.isIntersecting) {
+                index?.classList.remove('bg-slate-200', 'dark:bg-slate-800') // remove bg
+                index?.classList.add('bg-indigo-600', 'dark:bg-indigo-700', 'text-white', 'font-bold', 'transition-colors', 'duration-200')
+            } else {
+                index?.classList.add('bg-slate-200', 'dark:bg-slate-800') // add bg
+                index?.classList.remove('bg-indigo-600', 'dark:bg-indigo-700', 'text-white', 'font-bold', 'transition-colors', 'duration-200')
+            }
+        })
+    }
 
-        const headings = document.querySelectorAll("div.prose h1, div.prose h2, div.prose h3, div.prose h4, div.prose h5, div.prose h6");
+    const headings = document.querySelectorAll('div.prose h1, div.prose h2, div.prose h3, div.prose h4, div.prose h5, div.prose h6')
 
-        const options = {
-            root: null,
-            rootMargin: " 15% 0px 0% 0px ",
-            threshold: 1,
-        };
+    const options = {
+        root: null,
+        rootMargin: ' 15% 0px 0% 0px ',
+        threshold: 1
+    }
 
-        const observer = new IntersectionObserver(handleIntersection, options);
+    const observer = new IntersectionObserver(handleIntersection, options)
 
-        headings.forEach((heading) => {
-            observer.observe(heading);
-        });
-    };
-    fnObserver();
-    document.addEventListener("astro:after-swap", fnObserver);
+    headings.forEach((heading) => {
+        observer.observe(heading)
+    })
+}
+fnObserver()
+document.addEventListener('astro:after-swap', fnObserver)
 </script>
