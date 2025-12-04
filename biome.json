@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.7/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.8/schema.json",
   "files": {
     "includes": ["**/.*.cjs", "**/*.cjs", "**/*.ts", "**/*.json", "**/src/**"]
   },
@@ -64,6 +64,21 @@
       "json": {
         "parser": {
           "allowComments": true
+        }
+      }
+    },
+    {
+      "includes": ["**/*.svelte", "**/*.astro", "**/*.vue"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useConst": "off",
+            "useImportType": "off"
+          },
+          "correctness": {
+            "noUnusedVariables": "off",
+            "noUnusedImports": "off"
+          }
         }
       }
     }

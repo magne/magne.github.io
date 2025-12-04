@@ -5,7 +5,7 @@ import getReadingTime from 'reading-time'
  * Injects `minutesRead` into frontmatter processed by Remark.
  */
 export function remarkReadingTime() {
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  // biome-ignore lint/suspicious/noExplicitAny: false positive
   return (tree: unknown, { data }: any) => {
     const textOnPage = mdast.toString(tree)
     const readingTime = getReadingTime(textOnPage)
