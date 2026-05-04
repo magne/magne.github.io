@@ -10,7 +10,11 @@
     "skipLibCheck": true,
     "paths": {
       "@site-config": ["src/data/site-config.ts"],
-      "@*": ["src/*"]
+      "@components/*": ["src/components/*"],
+      "@data/*": ["src/data/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@styles/*": ["src/styles/*"],
+      "@utils": ["src/utils"]
     }
   },
   "exclude": ["node_modules", ".vscode", "dist"]
