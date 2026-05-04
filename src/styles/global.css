@@ -62,5 +62,6 @@
 }
 
 .MathJax:not([display]) > svg {
+  /* biome-ignore lint/complexity/noImportantStyles: override MathJax inline-styled svg */
   display: inline !important;
 }

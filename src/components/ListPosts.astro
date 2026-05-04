@@ -12,12 +12,10 @@ interface Props {
 const { posts, firstBig = false } = Astro.props
 ---
 
-<section class={cn(`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-8 mt-3`, firstBig && `md:[&>*:first-child]:col-span-2`)}>
-    {
-        posts.map(async (post) => {
+<section class={cn('grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-8 mt-3', firstBig && 'md:[&>*:first-child]:col-span-2')}>
+    {posts.map(async (post) => {
             const { remarkPluginFrontmatter } = await render(post);
 
             return <PostCard id={post.id} data={post.data} slug={post.id} readTime={remarkPluginFrontmatter.minutesRead} />;
-        })
-    }
+        })}
 </section>

@@ -10,9 +10,8 @@ type Props = {
 const { posts } = Astro.props
 ---
 
-<section class={cn(`flex flex-col md:flex-row sm:justify-between gap-8`)}>
-    {
-        posts.length > 0 ? (
+<section class={cn('flex flex-col md:flex-row sm:justify-between gap-8')}>
+    {posts.length > 0 ? (
             posts.map((post) => {
                 return (
                     <div class="flex flex-wrap gap-2">
@@ -36,6 +35,5 @@ const { posts } = Astro.props
             })
         ) : (
             <span class="text-gray-500">There are no related posts yet. 😢</span>
-        )
-    }
+        )}
 </section>

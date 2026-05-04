@@ -16,6 +16,7 @@ const { pathname } = Astro.url
 const isActive = exactMatch ? href === pathname || href === pathname.replace(/\/$/, '') : pathname.startsWith(href?.toString() || '')
 ---
 
+<!-- biome-ignore lint/a11y/useAnchorContent: slot content provided by consumer, lint cannot inspect -->
 <a
     {href}
     class={cn(

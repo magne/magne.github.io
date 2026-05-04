@@ -16,8 +16,7 @@ const creditClass = cn(
 )
 ---
 
-{
-    caption || credit ? (
+{caption || credit ? (
         <figure>
             <div class='relative overflow-hidden'>
                 {credit && (
@@ -36,5 +35,4 @@ const creditClass = cn(
     ) : (
         // @ts-ignore
         <AstroImage class={cn(cls, 'w-full!')} {...imgProps} />
-    )
-}
+    )}

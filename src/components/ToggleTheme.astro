@@ -33,13 +33,9 @@ if ('customElements' in window) {
 </script>
 
 <theme-toggle class="relative h-6 w-6">
-    <button id="toggle-theme" class="group" aria-label="Toggle light/dark theme">
-        <span class="absolute left-0 right-0 top-0 opacity-0 group-aria-pressed:opacity-100">
-            <SunIcon />
-        </span>
-        <span class="absolute left-0 right-0 top-0 opacity-0 group-aria-[pressed=false]:opacity-100">
-            <MoonIcon />
-        </span>
+    <button type="button" id="toggle-theme" class="group" aria-label="Toggle light/dark theme">
+        <span class="absolute left-0 right-0 top-0 opacity-0 group-aria-pressed:opacity-100"> <SunIcon /> </span>
+        <span class="absolute left-0 right-0 top-0 opacity-0 group-aria-[pressed=false]:opacity-100"> <MoonIcon /> </span>
     </button>
 </theme-toggle>
 
