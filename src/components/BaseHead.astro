@@ -39,17 +39,17 @@ const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`
 <meta name="author" content={siteConfig.author} />
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content={articleDate ? "article" : "website"} />
+<meta property="og:type" content={articleDate ? 'article' : 'website'} />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={socialImageURL} />
 {articleDate && (
-        <>
-            <meta property="article:author" content={siteConfig.author} />
-            <meta property="article:published_time" content={articleDate} />
-        </>
-    )}
+    <>
+        <meta property="article:author" content={siteConfig.author} />
+        <meta property="article:published_time" content={articleDate} />
+    </>
+)}
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
@@ -66,49 +66,49 @@ const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`
 
 <AstroFont
     config={[
-        {
-            preload: false,
-            display: "swap",
-            name: "Manrope",
-            fallback: "sans-serif",
-            src: [
-                {
-                    weight: "200",
-                    style: "normal",
-                    path: join(process.cwd(), "public", "fonts", "Manrope-ExtraLight.woff2"),
-                },
-                {
-                    weight: "300",
-                    style: "normal",
-                    path: join(process.cwd(), "public", "fonts", "Manrope-Light.woff2"),
-                },
-                {
-                    weight: "400",
-                    style: "normal",
-                    path: join(process.cwd(), "public", "fonts", "Manrope-Regular.woff2"),
-                },
-                {
-                    weight: "500",
-                    style: "normal",
-                    path: join(process.cwd(), "public", "fonts", "Manrope-Medium.woff2"),
-                },
-                {
-                    weight: "600",
-                    style: "normal",
-                    path: join(process.cwd(), "public", "fonts", "Manrope-SemiBold.woff2"),
-                },
-                {
-                    weight: "700",
-                    preload: true,
-                    style: "normal",
-                    path: join(process.cwd(), "public", "fonts", "Manrope-Bold.woff2"),
-                },
-                {
-                    weight: "800",
-                    style: "normal",
-                    path: join(process.cwd(), "public", "fonts", "Manrope-ExtraBold.woff2"),
-                },
-            ],
-        },
-    ]}
+    {
+        preload: false,
+        display: 'swap',
+        name: 'Manrope',
+        fallback: 'sans-serif',
+        src: [
+            {
+                weight: '200',
+                style: 'normal',
+                path: join(process.cwd(), 'public', 'fonts', 'Manrope-ExtraLight.woff2')
+            },
+            {
+                weight: '300',
+                style: 'normal',
+                path: join(process.cwd(), 'public', 'fonts', 'Manrope-Light.woff2')
+            },
+            {
+                weight: '400',
+                style: 'normal',
+                path: join(process.cwd(), 'public', 'fonts', 'Manrope-Regular.woff2')
+            },
+            {
+                weight: '500',
+                style: 'normal',
+                path: join(process.cwd(), 'public', 'fonts', 'Manrope-Medium.woff2')
+            },
+            {
+                weight: '600',
+                style: 'normal',
+                path: join(process.cwd(), 'public', 'fonts', 'Manrope-SemiBold.woff2')
+            },
+            {
+                weight: '700',
+                preload: true,
+                style: 'normal',
+                path: join(process.cwd(), 'public', 'fonts', 'Manrope-Bold.woff2')
+            },
+            {
+                weight: '800',
+                style: 'normal',
+                path: join(process.cwd(), 'public', 'fonts', 'Manrope-ExtraBold.woff2')
+            }
+        ]
+    }
+]}
 />

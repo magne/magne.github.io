@@ -31,19 +31,19 @@ const articleDate = pubDate.toISOString()
         </header>
 
         {heroImage && (
-                <Image
-                    src={heroImage}
-                    width={1000}
-                    height={500}
-                    quality={100}
-                    format="jpg"
-                    loading="eager"
-                    class="my-8 max-h-[300px] w-full rounded-md object-cover md:max-h-[500px]"
-                    alt={heroImageAlt ?? `img of ${title}`}
-                    credit={heroImageCredit}
-                    heroImage={true}
-                />
-            )}
+    <Image
+        src={heroImage}
+        width={1000}
+        height={500}
+        quality={100}
+        format="jpg"
+        loading="eager"
+        class="my-8 max-h-[300px] w-full rounded-md object-cover md:max-h-[500px]"
+        alt={heroImageAlt ?? `img of ${title}`}
+        credit={heroImageCredit}
+        heroImage={true}
+    />
+)}
 
         <hr />
 

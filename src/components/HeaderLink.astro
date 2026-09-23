@@ -20,13 +20,13 @@ const isActive = exactMatch ? href === pathname || href === pathname.replace(/\/
 <a
     {href}
     class={cn(
-        // Base styles
-        'inline-flex items-center transition-colors duration-200',
-        'hover:text-opacity-100 focus-visible:text-opacity-100',
-        'focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 rounded-sm',
-        isActive ? 'text-opacity-100 font-medium' : 'text-opacity-60',
-        className
-    )}
+    // Base styles
+    'inline-flex items-center transition-colors duration-200',
+    'hover:text-opacity-100 focus-visible:text-opacity-100',
+    'focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 rounded-sm',
+    isActive ? 'text-opacity-100 font-medium' : 'text-opacity-60',
+    className
+)}
     aria-current={isActive ? 'page' : undefined}
     rel={props.target === '_blank' ? 'noopener noreferrer' : undefined}
     {...props}

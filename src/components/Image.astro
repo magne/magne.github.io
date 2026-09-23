@@ -17,22 +17,20 @@ const creditClass = cn(
 ---
 
 {caption || credit ? (
-        <figure>
-            <div class='relative overflow-hidden'>
-                {credit && (
-                    <span class={creditClass}>
-                        {/* eslint-disable astro/no-set-html-directive */}
-                        Photo by <Fragment set:html={credit} />
-                    </span>
-                )}
-                {/* @ts-ignore */}
-                <AstroImage class={cn(cls, 'w-full!')} {...imgProps} />
-            </div>
-            {caption && (
-                <figcaption class={cn('absolute m-0 border-0 p-0 align-baseline text-sm italic', heroImage && 'bottom-8')}>{caption}</figcaption>
+    <figure>
+        <div class="relative overflow-hidden">
+            {credit && (
+                <span class={creditClass}>
+                    {/* eslint-disable astro/no-set-html-directive */}
+                    Photo by <Fragment set:html={credit} />
+                </span>
             )}
-        </figure>
-    ) : (
-        // @ts-ignore
-        <AstroImage class={cn(cls, 'w-full!')} {...imgProps} />
-    )}
+            {/* @ts-ignore */}
+            <AstroImage class={cn(cls, 'w-full!')} {...imgProps} />
+        </div>
+        {caption && <figcaption class={cn('absolute m-0 border-0 p-0 align-baseline text-sm italic', heroImage && 'bottom-8')}>{caption}</figcaption>}
+    </figure>
+) : (
+    // @ts-ignore
+    <AstroImage class={cn(cls, 'w-full!')} {...imgProps} />
+)}

@@ -43,16 +43,11 @@ const SOCIALNETWORKS = [
             </div>
 
             <div class="flex items-center justify-center gap-3 md:justify-end">
-                {SOCIALNETWORKS.map(network => (
-                    <HeaderLink
-                        class='hover:text-opacity-100'
-                        href={network.url}
-                        target='_blank'
-                        aria-label={network.name}
-                    >
-                        <network.icon />
-                    </HeaderLink>
-                ))}
+                {SOCIALNETWORKS.map((network) => (
+    <HeaderLink class="hover:text-opacity-100" href={network.url} target="_blank" aria-label={network.name}>
+        <network.icon />
+    </HeaderLink>
+))}
             </div>
         </nav>
     </div>

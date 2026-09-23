@@ -23,17 +23,17 @@ import '@pagefind/default-ui/css/ui.css'
                 Close
             </button>
             {import.meta.env.DEV ? (
-                    <div class='mx-auto text-center dark:text-white'>
-                        <p>
-                            Search is only available in production builds. <br />
-                            Try building and previewing the site to test it out locally.
-                        </p>
-                    </div>
-                ) : (
-                    <div class='search-container dark:text-white'>
-                        <div id='pagefind__search' />
-                    </div>
-                )}
+    <div class="mx-auto text-center dark:text-white">
+        <p>
+            Search is only available in production builds. <br />
+            Try building and previewing the site to test it out locally.
+        </p>
+    </div>
+) : (
+    <div class="search-container dark:text-white">
+        <div id="pagefind__search" />
+    </div>
+)}
         </div>
     </dialog>
 </site-search>
