@@ -1,3 +1,4 @@
+import { unified } from '@astrojs/markdown-remark'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import tailwindcss from '@tailwindcss/vite'
@@ -31,8 +32,10 @@ export default defineConfig({
 
   markdown: {
     syntaxHighlight: false,
-    remarkPlugins: [remarkReadingTime, remarkMath],
-    rehypePlugins: [rehypeMathjax, [rehypePrettyCode, prettyCodeOptions]]
+    processor: unified({
+      remarkPlugins: [remarkReadingTime, remarkMath],
+      rehypePlugins: [rehypeMathjax, [rehypePrettyCode, prettyCodeOptions]]
+    })
   },
 
   vite: {
